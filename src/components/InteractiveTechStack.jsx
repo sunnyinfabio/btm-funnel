@@ -21,6 +21,7 @@ import {
   X
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { HolographicTiltCard } from './HolographicTiltCard';
 
 export const InteractiveTechStack = ({ onOpenBooking }) => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -317,21 +318,18 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
           ))}
         </div>
 
-        {/* Minimal Compact Technology Cards Grid */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-10">
+        {/* Minimal Compact Technology Cards Grid with 3D Holographic Tilt & Glare */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
           <AnimatePresence>
             {filteredTech.map((tech) => {
               const isInSquad = selectedSquadStack.includes(tech.name);
 
               return (
-                <motion.div
+                <HolographicTiltCard
                   key={tech.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.2 }}
-                  className="p-5 rounded-2xl border border-slate-200 bg-white hover:border-btm-cyan/80 hover:shadow-lg transition-all flex flex-col justify-between group"
+                  maxRotation={10}
+                  glareOpacity={0.3}
+                  className="p-5 border border-slate-200 bg-white hover:border-btm-cyan transition-all flex flex-col justify-between group cursor-pointer"
                 >
                   {/* Top: Version & Domain */}
                   <div>
@@ -394,11 +392,11 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
                     </button>
                   </div>
 
-                </motion.div>
+                </HolographicTiltCard>
               );
             })}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {/* Minimal Custom Scoping Banner */}
         <div className="p-6 rounded-2xl bg-slate-900 text-white border border-slate-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">

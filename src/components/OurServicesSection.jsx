@@ -12,6 +12,7 @@ import {
   Layers,
   CheckCircle2
 } from 'lucide-react';
+import { HolographicTiltCard } from './HolographicTiltCard';
 
 export const OurServicesSection = ({ onOpenBooking }) => {
   const [isPaused, setIsPaused] = useState(false);
@@ -110,7 +111,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
 
       {/* Continuous Horizontal Flow Marquee: Right to Left */}
       <div
-        className="relative w-full overflow-hidden py-4 mb-14"
+        className="relative w-full overflow-hidden py-6 mb-14"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -120,7 +121,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
 
         {/* Animated Marquee Strip */}
         <motion.div
-          className="flex gap-6 w-max"
+          className="flex gap-7 w-max px-4"
           animate={{
             x: isPaused ? undefined : ['0%', '-50%'],
           }}
@@ -134,9 +135,11 @@ export const OurServicesSection = ({ onOpenBooking }) => {
           }}
         >
           {marqueeServices.map((srv, idx) => (
-            <div
+            <HolographicTiltCard
               key={`${srv.id}-${idx}`}
-              className="w-[340px] sm:w-[380px] h-[370px] sm:h-[400px] rounded-3xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer relative shrink-0"
+              maxRotation={12}
+              glareOpacity={0.35}
+              className="w-[340px] sm:w-[380px] h-[370px] sm:h-[400px] overflow-hidden border border-slate-200 group cursor-pointer shrink-0"
             >
               {/* Background Service Image */}
               <img
@@ -213,7 +216,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
 
               </div>
 
-            </div>
+            </HolographicTiltCard>
           ))}
         </motion.div>
       </div>
