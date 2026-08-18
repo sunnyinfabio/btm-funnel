@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, 
@@ -15,15 +15,11 @@ import {
   ShieldCheck,
   Code2,
   Lock,
-  Globe,
-  Terminal,
-  Activity,
-  Server
+  Globe
 } from 'lucide-react';
 
 export const HeroSection = ({ onOpenBooking }) => {
   const [activeAttentionTab, setActiveAttentionTab] = useState(0);
-  const [activeTelemetryIndex, setActiveTelemetryIndex] = useState(0);
 
   const attentionHooks = [
     {
@@ -52,22 +48,8 @@ export const HeroSection = ({ onOpenBooking }) => {
     },
   ];
 
-  const telemetryLogs = [
-    { time: '10:42:01', event: 'Squad Provisioning', detail: '4x Senior .NET Core + React Pod Allocated', status: 'GREEN' },
-    { time: '10:42:15', event: 'CI/CD Connected', detail: 'GitHub Actions & SOC2 Gateway Handshake', status: 'ACTIVE' },
-    { time: '10:42:29', event: 'First PR Merged', detail: 'Auth Microservice & Kafka Stream Live', status: 'DEPLOYED' },
-    { time: '10:42:44', event: 'Test Automation', detail: '99.4% Pass Rate on Playwright Regression', status: 'VERIFIED' },
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTelemetryIndex((prev) => (prev + 1) % telemetryLogs.length);
-    }, 3200);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden text-white">
+    <section className="relative pt-32 pb-24 md:pt-40 md:pb-28 overflow-hidden text-white">
       
       {/* Official BTM Hero Chess Background Image & Layered Contrast Gradient */}
       <div className="absolute inset-0 z-0">
@@ -148,7 +130,7 @@ export const HeroSection = ({ onOpenBooking }) => {
           </motion.p>
         </div>
 
-        {/* Action Hub with Live Red Button */}
+        {/* Action Hub */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -164,32 +146,22 @@ export const HeroSection = ({ onOpenBooking }) => {
             <ArrowRight className="w-5 h-5" />
           </button>
 
-          <button
-            onClick={() => onOpenBooking('capacity-review')}
-            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-slate-950 font-bold text-base shadow-btm-glow hover:scale-[1.03] active:scale-[0.98] transition-all flex items-center justify-center gap-3 shimmer-btm cursor-pointer"
-          >
-            <Sparkles className="w-5 h-5 text-slate-950" />
-            <span>Request Capacity Review</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
-
           <a
             href="#capacity-calculator"
             className="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/80 backdrop-blur-md text-white font-semibold text-base border border-slate-700 hover:border-btm-cyan hover:bg-slate-800 transition-all flex items-center justify-center gap-2 group shadow-xl hover:scale-[1.02]"
           >
-            <span>Capacity Calculator</span>
+            <span>Calculate Capacity & ROI</span>
             <TrendingUp className="w-4 h-4 text-btm-cyan group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
 
-        {/* Modern Live Telemetry & Problem Recognition Dashboard */}
+        {/* Problem Recognition Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-5xl mx-auto space-y-6"
+          className="max-w-5xl mx-auto"
         >
-          {/* Main Problem Recognition Hub */}
           <div className="rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl relative overflow-hidden bg-slate-900/90 backdrop-blur-xl hover:border-btm-cyan/60 transition-all">
             <div className="flex flex-wrap items-center justify-between gap-4 pb-4 mb-6 border-b border-slate-800">
               <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
@@ -251,52 +223,6 @@ export const HeroSection = ({ onOpenBooking }) => {
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
-
-          {/* Interactive Live Sprint Telemetry Terminal */}
-          <div className="rounded-3xl p-5 sm:p-6 bg-slate-950/95 text-white border border-slate-800 shadow-2xl overflow-hidden relative backdrop-blur-xl">
-            <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
-              <div className="flex items-center gap-2 text-xs font-mono">
-                <Terminal className="w-4 h-4 text-btm-cyan" />
-                <span className="text-slate-300 font-bold">BTM SPRINT TELEMETRY HUD</span>
-                <span className="text-slate-600">|</span>
-                <span className="text-emerald-400 flex items-center gap-1">
-                  <Activity className="w-3.5 h-3.5 animate-pulse" /> LIVE STREAM
-                </span>
-              </div>
-
-              <div className="flex gap-2 text-[11px] font-mono">
-                <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-btm-cyan">
-                  SOC2 Certified
-                </span>
-                <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-emerald-400">
-                  99.4% Green SLA
-                </span>
-              </div>
-            </div>
-
-            {/* Simulated Live Stream Event */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-              <div className="md:col-span-8 p-3 rounded-2xl bg-slate-900/90 border border-slate-800 font-mono text-xs space-y-1">
-                <div className="text-slate-500 text-[10px]">CURRENT SPRINT EVENT:</div>
-                <div className="flex items-center gap-2">
-                  <span className="text-btm-gold font-bold">[{telemetryLogs[activeTelemetryIndex].time}]</span>
-                  <span className="text-btm-cyan font-bold">{telemetryLogs[activeTelemetryIndex].event}</span>
-                  <span className="text-slate-400">→</span>
-                  <span className="text-slate-200">{telemetryLogs[activeTelemetryIndex].detail}</span>
-                </div>
-              </div>
-
-              <div className="md:col-span-4 flex items-center justify-between md:justify-end gap-3 font-mono text-xs">
-                <div className="text-right">
-                  <span className="text-[10px] text-slate-400 block">DEPLOYMENT STATUS</span>
-                  <span className="text-emerald-400 font-bold">{telemetryLogs[activeTelemetryIndex].status}</span>
-                </div>
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-btm-cyan/40 flex items-center justify-center text-btm-cyan shrink-0">
-                  <Server className="w-5 h-5" />
-                </div>
-              </div>
-            </div>
           </div>
         </motion.div>
 

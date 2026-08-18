@@ -4,17 +4,14 @@ import { CursorSpotlight } from './components/CursorSpotlight';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { HiringLagSection } from './components/HiringLagSection';
+import { InteractiveCapacityCalculator } from './components/InteractiveCapacityCalculator';
 import { SolutionsSection } from './components/SolutionsSection';
 import { InteractiveWhyBTM } from './components/InteractiveWhyBTM';
-import { InteractiveCapacityCalculator } from './components/InteractiveCapacityCalculator';
-import { SprintVelocitySimulator } from './components/SprintVelocitySimulator';
-import { AuthoritySection } from './components/AuthoritySection';
 import { DifferentiationBento } from './components/DifferentiationBento';
 import { InteractiveIndustries } from './components/InteractiveIndustries';
 import { InteractiveTechStack } from './components/InteractiveTechStack';
 import { DevelopmentProcess } from './components/DevelopmentProcess';
 import { TrustSection } from './components/TrustSection';
-import { ConversionHub } from './components/ConversionHub';
 import { ABMSegmentRouting } from './components/ABMSegmentRouting';
 import { ThoughtLeadership } from './components/ThoughtLeadership';
 import { ConsultationSection } from './components/ConsultationSection';
@@ -58,8 +55,10 @@ export function App() {
         <Navbar onOpenBooking={handleOpenBooking} />
 
         <main className="flex-1">
-          {/* Stage 01 — Attention */}
+          {/* Stage 01 — Attention Hero */}
           <HeroSection onOpenBooking={handleOpenBooking} />
+
+          {/* Hiring Lag & Opportunity Cost Problem Stacking */}
           <HiringLagSection onOpenBooking={handleOpenBooking} />
 
           {/* Interactive Live Capacity & ROI Calculator */}
@@ -71,34 +70,25 @@ export function App() {
           {/* Interactive 3D Packet Dossiers ("Why BTM Outsourcing?") */}
           <InteractiveWhyBTM onOpenBooking={handleOpenBooking} />
 
-          {/* Interactive Sprint Velocity Burndown Simulator */}
-          <SprintVelocitySimulator onOpenBooking={handleOpenBooking} />
-
-          {/* Stage 03 — Authority: The Delivery Formula */}
-          <AuthoritySection onOpenBooking={handleOpenBooking} />
-
           {/* Stage 04 — Differentiation: 4 Core Pillars */}
           <DifferentiationBento onOpenBooking={handleOpenBooking} />
 
-          {/* Key Focus Industries Explorer (15 Verticals from live site) */}
+          {/* Key Focus Industries Explorer (Topologies & Blueprints) */}
           <InteractiveIndustries onOpenBooking={handleOpenBooking} />
 
-          {/* Cross-Functional Technology Stack Matrix */}
+          {/* Cross-Functional Technology Stack with Modern Frames & Live Squad Builder */}
           <InteractiveTechStack onOpenBooking={handleOpenBooking} />
 
-          {/* Step-by-Step Agile Development Process Timeline */}
+          {/* Step-by-Step Agile Development Process with Official BTM Diagram */}
           <DevelopmentProcess onOpenBooking={handleOpenBooking} />
 
-          {/* Stage 05 — Trust & Risk Reversal */}
+          {/* Stage 05 — Trust & 2-Week Risk-Free Trial Sprint */}
           <TrustSection onOpenBooking={handleOpenBooking} />
 
-          {/* Stage 06 — Problem-Led Conversion Hub */}
-          <ConversionHub onOpenBookingWithData={handleOpenBookingWithData} />
-
-          {/* Stage 07 — ABM & Audience Segment Routing */}
+          {/* Stage 07 — ABM & Audience Growth-Stage Routing */}
           <ABMSegmentRouting onOpenBooking={handleOpenBooking} />
 
-          {/* Thought Leadership Layer (Anupam Oberai) */}
+          {/* Thought Leadership Layer (Philosophy by Anupam Oberai) */}
           <ThoughtLeadership onOpenBooking={handleOpenBooking} />
 
           {/* Authentic Consultation & Quote Request with Corporate Background */}
