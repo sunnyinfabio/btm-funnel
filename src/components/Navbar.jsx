@@ -25,7 +25,7 @@ import {
 export const Navbar = ({ onOpenBooking }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null); // 'expertise', 'about', 'industries'
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,7 +91,7 @@ export const Navbar = ({ onOpenBooking }) => {
             />
           </a>
 
-          {/* Desktop Navigation Links with Red Hover Highlights */}
+          {/* Desktop Navigation Links matching live site screenshot */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 font-display">
             
             {/* 1. Expertise Dropdown */}
@@ -250,24 +250,11 @@ export const Navbar = ({ onOpenBooking }) => {
             </a>
           </nav>
 
-          {/* Right Hub: Direct Phones & Get In Touch Red Button */}
-          <div className="hidden lg:flex items-center gap-5">
-            {/* Direct Phone Numbers */}
-            <div className="flex flex-col items-end text-[11px] font-mono text-slate-600 border-r border-slate-200 pr-4">
-              <a href="tel:+18624371138" className="hover:text-btm-cyan flex items-center gap-1.5 transition-colors">
-                <span className="text-[9px] px-1 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-700 font-bold">USA</span>
-                <span className="font-semibold text-slate-800">+1 (862) 437-1138</span>
-              </a>
-              <a href="tel:+911244104312" className="hover:text-btm-cyan flex items-center gap-1.5 transition-colors mt-0.5">
-                <span className="text-[9px] px-1 py-0.2 rounded bg-slate-100 border border-slate-200 text-slate-700 font-bold">IND</span>
-                <span className="font-semibold text-slate-800">+91 124 410 4312</span>
-              </a>
-            </div>
-
-            {/* Official Vibrant Red "Get In Touch" Button from live website screenshot */}
+          {/* Right Hub: Clean Red "Get In Touch" Button */}
+          <div className="hidden lg:flex items-center">
             <button
               onClick={() => onOpenBooking('navbar-get-in-touch')}
-              className="px-7 py-3 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-sm shadow-md hover:shadow-red-500/25 transition-all flex items-center gap-2 cursor-pointer shrink-0"
+              className="px-8 py-3 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-sm shadow-md hover:shadow-red-500/25 transition-all flex items-center gap-2 cursor-pointer shrink-0"
             >
               <span>Get In Touch</span>
               <ArrowRight className="w-4 h-4" />
@@ -297,17 +284,6 @@ export const Navbar = ({ onOpenBooking }) => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-6 mt-3 space-y-4 shadow-xl"
           >
-            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex flex-col gap-2 font-mono text-xs text-slate-700">
-              <a href="tel:+18624371138" className="flex items-center justify-between text-btm-cyan font-semibold">
-                <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> USA Direct</span>
-                <span>+1 (862) 437-1138</span>
-              </a>
-              <a href="tel:+911244104312" className="flex items-center justify-between text-btm-cyan font-semibold">
-                <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> India Direct</span>
-                <span>+91 124 410 4312</span>
-              </a>
-            </div>
-
             <div className="flex flex-col gap-2 text-sm font-bold text-slate-800">
               <a href="#solutions" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-slate-100">Expertise & Solutions</a>
               <a href="#why-btm" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-slate-100">Why BTM (3D Dossiers)</a>
