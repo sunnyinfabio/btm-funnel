@@ -3,6 +3,7 @@ import { BackgroundCanvas } from './components/BackgroundCanvas';
 import { CursorSpotlight } from './components/CursorSpotlight';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
+import { OurServicesSection } from './components/OurServicesSection';
 import { ExecutionPipelineDiagram } from './components/ExecutionPipelineDiagram';
 import { InteractiveTechStack } from './components/InteractiveTechStack';
 import { ThoughtLeadership } from './components/ThoughtLeadership';
@@ -51,34 +52,37 @@ export function App() {
         <Navbar onOpenBooking={handleOpenBooking} />
 
         <main className="flex-1">
-          {/* 1. Selector / Hero */}
+          {/* 1. Selector / Hero: Experience The New Game */}
           <HeroSection onOpenBooking={handleOpenBooking} />
 
-          {/* 2. Visual Diagram: Roadmap → Capacity Gap → BTM Integration → Execution */}
+          {/* 2. Official BTM "Our Services" Section matching live website */}
+          <OurServicesSection onOpenBooking={handleOpenBooking} />
+
+          {/* 3. Visual Diagram: Roadmap → Capacity Gap → BTM Integration → Execution */}
           <ExecutionPipelineDiagram onOpenBooking={handleOpenBooking} />
 
-          {/* 3. Technology Ecosystem with Frame Inspectors & Live Squad Builder */}
+          {/* 4. Technology Ecosystem with 3D Flip Notes Cards & Live Squad Builder */}
           <InteractiveTechStack onOpenBooking={handleOpenBooking} />
 
-          {/* 4. Editorial Section: Executive Philosophy by Anupam Oberai */}
+          {/* 5. Editorial Section: Executive Thought Leadership Comments Carousel */}
           <ThoughtLeadership onOpenBooking={handleOpenBooking} />
 
-          {/* 5. Featured Cases: Challenge → BTM Role → What BTM Owned → Outcome */}
+          {/* 6. Featured Case Studies: Challenge → BTM Role → What BTM Owned → Outcome */}
           <InteractiveIndustries onOpenBooking={handleOpenBooking} />
 
-          {/* 6. Evidence Wall: Certifications, Locations, Numbers, & Trial Guarantee */}
+          {/* 7. Evidence Wall: Certifications, Delivery Hubs, Numbers, & 2-Week Trial */}
           <TrustSection onOpenBooking={handleOpenBooking} />
 
-          {/* 7. Timeline: Agile Development Process with Official BTM Diagram */}
+          {/* 8. Timeline: Agile Development Process with Official BTM Diagram */}
           <DevelopmentProcess onOpenBooking={handleOpenBooking} />
 
-          {/* 8. Interactive Capacity & ROI Estimator */}
+          {/* 9. Interactive Capacity & ROI Estimator */}
           <InteractiveCapacityCalculator onOpenBooking={handleOpenBooking} />
 
-          {/* 9. Authentic Quote & Consultation Hub */}
+          {/* 10. Authentic Quote & Consultation Hub */}
           <ConsultationSection />
 
-          {/* 10. Frequently Asked Questions */}
+          {/* 11. Frequently Asked Questions */}
           <FAQSection onOpenBooking={handleOpenBooking} />
         </main>
 
