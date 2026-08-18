@@ -37,6 +37,7 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
       id: 0,
       name: 'Financial Services & FinTech',
       icon: Landmark,
+      image: '/services/BTM_Service_SO_Img.jpg',
       color: 'text-emerald-700 border-emerald-200 bg-emerald-50',
       tagline: 'High-Throughput Order Routing & Real-Time AML Infrastructure',
       challenge: 'Client faced severe latency bottlenecks (> 45ms) and scaling limits during market volatility peaks with strict PCI-DSS & SOC2 audit deadlines.',
@@ -51,6 +52,7 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
       id: 1,
       name: 'Technology & Enterprise SaaS',
       icon: Cpu,
+      image: '/services/BTM_Service_WD_Img.jpg',
       color: 'text-btm-cyan border-cyan-200 bg-cyan-50',
       tagline: 'Multi-Tenant Cloud Platform & Microservices Migration',
       challenge: 'Fast-growing Series B SaaS had 4 months of backlogged enterprise customer requests with 6 open senior full-stack roles stalling the roadmap.',
@@ -65,6 +67,7 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
       id: 2,
       name: 'Healthcare & Life Sciences',
       icon: Activity,
+      image: '/services/BTM_Service_QA_Img.jpg',
       color: 'text-rose-700 border-rose-200 bg-rose-50',
       tagline: 'HIPAA/HITECH Certified Telehealth & EHR Integration Engine',
       challenge: 'Legacy patient intake system caused clinical dispatch delays and failed mobile responsiveness for 200,000+ telehealth consultations.',
@@ -79,6 +82,7 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
       id: 3,
       name: 'Retail & Omnichannel E-Commerce',
       icon: ShoppingBag,
+      image: '/services/BTM_Service_SA_Img.jpg',
       color: 'text-amber-700 border-amber-200 bg-amber-50',
       tagline: 'High-Concurrency Flash Checkout & Real-Time ERP Bridge',
       challenge: 'Flash-sale traffic spikes caused 14% cart drop-offs and inventory discrepancies between physical retail stores and digital storefronts.',
@@ -93,6 +97,7 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
       id: 4,
       name: 'Transportation & Logistics',
       icon: Truck,
+      image: '/services/BTM_Service_DT_Img.jpg',
       color: 'text-blue-700 border-blue-200 bg-blue-50',
       tagline: 'Real-Time GPS Fleet Telemetry & WMS Optimization',
       challenge: 'Fleet dispatch was relying on batch data updates causing 25-minute route estimation delays and warehouse queue congestion.',
@@ -107,6 +112,7 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
       id: 5,
       name: 'Airlines & Aviation',
       icon: Plane,
+      image: '/services/BTM_Service_MD_Img.jpg',
       color: 'text-sky-700 border-sky-200 bg-sky-50',
       tagline: 'GDS Booking Engine & Flight Dispatch Optimization',
       challenge: 'Legacy mainframe ticketing system couldn’t support dynamic seat pricing or mobile self-service check-in integrations.',
@@ -175,7 +181,7 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
             })}
           </div>
 
-          {/* Right Column: Featured Case Study Deep-Dive: Challenge → BTM Role → What BTM Owned → Outcome (7 cols) */}
+          {/* Right Column: Featured Case Study Deep-Dive with Header Image & 4-Step Architecture Matrix */}
           <div className="lg:col-span-7">
             <AnimatePresence mode="wait">
               <motion.div
@@ -184,92 +190,108 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.25 }}
-                className="glass-card-btm rounded-3xl p-7 sm:p-9 border border-slate-200 shadow-xl bg-white relative overflow-hidden space-y-6"
+                className="glass-card-btm rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-white relative space-y-0"
               >
-                {/* Case Header */}
-                <div className="flex items-center justify-between gap-4 pb-4 border-b border-slate-100">
-                  <div>
-                    <div className="text-[10.5px] font-mono uppercase text-slate-400 font-bold">
+                {/* Case Study Header Banner Image */}
+                <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-950">
+                  <img
+                    src={current.image}
+                    alt={current.name}
+                    className="w-full h-full object-cover opacity-80 scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#002B49] via-[#002B49]/70 to-transparent" />
+                  
+                  {/* Top Badges */}
+                  <div className="absolute top-4 left-5 right-5 flex items-center justify-between z-10">
+                    <span className="text-[10px] font-mono uppercase text-btm-cyan font-bold px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-cyan-400/30">
                       {current.clientTier} • {current.turnaround}
-                    </div>
-                    <h3 className="font-display font-bold text-2xl text-[#002B49] mt-0.5">
+                    </span>
+                    <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-md bg-emerald-950/80 backdrop-blur-md border border-emerald-400/30 text-emerald-400 flex items-center gap-1">
+                      <CheckCircle2 className="w-3 h-3" /> Verified Outcome
+                    </span>
+                  </div>
+
+                  {/* Title & Tagline */}
+                  <div className="absolute bottom-4 left-5 right-5 z-10">
+                    <h3 className="font-display font-bold text-2xl text-white">
                       {current.name}
                     </h3>
                     <p className="text-xs text-btm-cyan font-mono font-semibold">
                       {current.tagline}
                     </p>
                   </div>
-
-                  <span className="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 shrink-0">
-                    Verified Outcome
-                  </span>
                 </div>
 
-                {/* 4-Step Structural Execution Matrix: Challenge -> Role -> Owned -> Outcome */}
-                <div className="space-y-3.5 text-xs">
-                  
-                  {/* 1. Challenge */}
-                  <div className="p-4 rounded-2xl bg-red-50/70 border border-red-200">
-                    <span className="text-[10px] font-mono uppercase font-bold text-red-700 block mb-1 flex items-center gap-1.5">
-                      <AlertCircle className="w-3.5 h-3.5" /> 1. The Challenge & Technical Bottleneck
-                    </span>
-                    <p className="text-slate-800 leading-relaxed">
-                      {current.challenge}
-                    </p>
+                {/* Case Study Body */}
+                <div className="p-7 space-y-4">
+                  {/* 4-Step Structural Execution Matrix: Challenge -> Role -> Owned -> Outcome */}
+                  <div className="space-y-3 text-xs">
+                    
+                    {/* 1. Challenge */}
+                    <div className="p-3.5 rounded-2xl bg-red-50/70 border border-red-200">
+                      <span className="text-[10px] font-mono uppercase font-bold text-red-700 block mb-1 flex items-center gap-1.5">
+                        <AlertCircle className="w-3.5 h-3.5" /> 1. The Challenge & Technical Bottleneck
+                      </span>
+                      <p className="text-slate-800 leading-relaxed">
+                        {current.challenge}
+                      </p>
+                    </div>
+
+                    {/* 2. BTM Role */}
+                    <div className="p-3.5 rounded-2xl bg-cyan-50/70 border border-cyan-200">
+                      <span className="text-[10px] font-mono uppercase font-bold text-btm-cyan block mb-1 flex items-center gap-1.5">
+                        <Users className="w-3.5 h-3.5" /> 2. BTM Role & Squad Formation
+                      </span>
+                      <p className="text-slate-800 leading-relaxed">
+                        {current.btmRole}
+                      </p>
+                    </div>
+
+                    {/* 3. What BTM Owned */}
+                    <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                      <span className="text-[10px] font-mono uppercase font-bold text-slate-700 block mb-1 flex items-center gap-1.5">
+                        <Layers className="w-3.5 h-3.5 text-amber-600" /> 3. What BTM Owned
+                      </span>
+                      <p className="text-slate-800 leading-relaxed">
+                        {current.whatBTM_Owned}
+                      </p>
+                    </div>
+
+                    {/* 4. Quantifiable Outcome */}
+                    <div className="p-3.5 rounded-2xl bg-emerald-50/80 border border-emerald-300">
+                      <span className="text-[10px] font-mono uppercase font-bold text-emerald-800 block mb-1 flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5" /> 4. Quantifiable Outcome & Production Impact
+                      </span>
+                      <p className="text-emerald-950 font-bold leading-relaxed">
+                        {current.outcome}
+                      </p>
+                    </div>
+
                   </div>
 
-                  {/* 2. BTM Role */}
-                  <div className="p-4 rounded-2xl bg-cyan-50/70 border border-cyan-200">
-                    <span className="text-[10px] font-mono uppercase font-bold text-btm-cyan block mb-1 flex items-center gap-1.5">
-                      <Users className="w-3.5 h-3.5" /> 2. BTM Role & Squad Formation
-                    </span>
-                    <p className="text-slate-800 leading-relaxed">
-                      {current.btmRole}
-                    </p>
+                  {/* Production Stack */}
+                  <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono">
+                    <div>
+                      <span className="text-slate-500 block mb-0.5">Production Stack:</span>
+                      <span className="text-slate-900 font-bold">{current.stack}</span>
+                    </div>
+                    <div className="text-emerald-700 font-semibold flex items-center gap-1.5 shrink-0">
+                      <Lock className="w-3.5 h-3.5" /> 100% IP Clean-Room
+                    </div>
                   </div>
 
-                  {/* 3. What BTM Owned */}
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] font-mono uppercase font-bold text-slate-700 block mb-1 flex items-center gap-1.5">
-                      <Layers className="w-3.5 h-3.5 text-amber-600" /> 3. What BTM Owned
-                    </span>
-                    <p className="text-slate-800 leading-relaxed">
-                      {current.whatBTM_Owned}
-                    </p>
-                  </div>
-
-                  {/* 4. Quantifiable Outcome */}
-                  <div className="p-4 rounded-2xl bg-emerald-50/80 border border-emerald-300">
-                    <span className="text-[10px] font-mono uppercase font-bold text-emerald-800 block mb-1 flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5" /> 4. Quantifiable Outcome & Production Impact
-                    </span>
-                    <p className="text-emerald-950 font-bold leading-relaxed">
-                      {current.outcome}
-                    </p>
-                  </div>
-
+                  {/* Call to Action */}
+                  <button
+                    onClick={() => onOpenBooking(`case-study-${current.name.toLowerCase()}`)}
+                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 shimmer-btm cursor-pointer"
+                  >
+                    <Sparkles className="w-4 h-4 text-slate-950" />
+                    <span>Build Similar Squad for {current.name}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
 
-                {/* Proven Stack Bar */}
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono">
-                  <div>
-                    <span className="text-slate-500 block mb-0.5">Production Stack:</span>
-                    <span className="text-slate-900 font-bold">{current.stack}</span>
-                  </div>
-                  <div className="text-emerald-700 font-semibold flex items-center gap-1.5 shrink-0">
-                    <Lock className="w-3.5 h-3.5" /> 100% IP Clean-Room
-                  </div>
-                </div>
-
-                {/* Call to Action */}
-                <button
-                  onClick={() => onOpenBooking(`case-study-${current.name.toLowerCase()}`)}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 shimmer-btm cursor-pointer"
-                >
-                  <Sparkles className="w-4 h-4 text-white" />
-                  <span>Build Similar Squad for {current.name}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
               </motion.div>
             </AnimatePresence>
           </div>

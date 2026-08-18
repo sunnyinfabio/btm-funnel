@@ -37,6 +37,7 @@ export const TrustSection = ({ onOpenBooking }) => {
       role: 'Client Architecture & Leadership Alignment',
       overlap: 'Direct EST / PST Timezone Sync',
       phone: '+1 (862) 437-1138',
+      image: '/services/BTM_Service_SO_Img.jpg',
     },
     {
       country: '🇮🇳 India Delivery Center',
@@ -44,6 +45,7 @@ export const TrustSection = ({ onOpenBooking }) => {
       role: 'Core Engineering Pods & 24/7 Delivery',
       overlap: '4-7 Hours Real-Time Standup Overlap',
       phone: '+91 124 410 4312',
+      image: '/services/BTM_Service_DT_Img.jpg',
     },
   ];
 
@@ -98,25 +100,34 @@ export const TrustSection = ({ onOpenBooking }) => {
           ))}
         </div>
 
-        {/* Delivery Locations & Real-Time Sync Hub */}
+        {/* Delivery Locations & Real-Time Sync Hub with Background Images */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
           {deliveryLocations.map((loc) => (
-            <div key={loc.country} className="p-7 rounded-3xl bg-[#002B49] text-white border border-slate-800 shadow-xl flex flex-col justify-between">
-              <div>
+            <div key={loc.country} className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-800 bg-[#002B49] text-white p-7 flex flex-col justify-between group min-h-[220px]">
+              {/* Card Image Background */}
+              <img
+                src={loc.image}
+                alt={loc.hub}
+                className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 group-hover:opacity-30 transition-all duration-700"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#002B49] via-[#002B49]/80 to-transparent" />
+
+              <div className="relative z-10">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-display font-bold text-lg text-white">
+                  <span className="font-display font-bold text-xl text-white">
                     {loc.country}
                   </span>
-                  <span className="text-[10.5px] font-mono px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-btm-cyan">
+                  <span className="text-[10.5px] font-mono px-2.5 py-0.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-slate-700 text-btm-cyan">
                     {loc.overlap}
                   </span>
                 </div>
 
-                <div className="text-sm font-bold text-btm-cyan mb-1">{loc.hub}</div>
+                <div className="text-base font-bold text-btm-cyan mb-1">{loc.hub}</div>
                 <p className="text-xs text-slate-300 leading-relaxed mb-4">{loc.role}</p>
               </div>
 
-              <div className="pt-3 border-t border-slate-700 flex items-center justify-between text-xs font-mono text-slate-300">
+              <div className="relative z-10 pt-3 border-t border-slate-700 flex items-center justify-between text-xs font-mono text-slate-300">
                 <span>Direct Hotline:</span>
                 <span className="text-white font-bold">{loc.phone}</span>
               </div>
@@ -124,14 +135,22 @@ export const TrustSection = ({ onOpenBooking }) => {
           ))}
         </div>
 
-        {/* The 2-Week Risk-Free Trial Sprint SLA Reversal Banner */}
-        <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-r from-[#002B49] via-slate-900 to-[#002B49] text-white border border-btm-cyan/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-          <div className="space-y-2">
+        {/* The 2-Week Risk-Free Trial Sprint SLA Reversal Banner with Backdrop Image */}
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-btm-cyan/40 bg-[#002B49] text-white p-7 sm:p-9 flex flex-col md:flex-row items-center justify-between gap-6">
+          <img
+            src="/btm-why-bg.jpg"
+            alt="BTM Risk Free Trial"
+            className="absolute inset-0 w-full h-full object-cover opacity-25"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#002B49]/95 via-[#002B49]/85 to-[#0A192F]/95" />
+
+          <div className="relative z-10 space-y-2">
             <div className="flex items-center gap-2 text-xs font-mono text-btm-gold">
               <Sparkles className="w-4 h-4" />
               <span>THE ULTIMATE RISK REVERSAL GUARANTEE</span>
             </div>
-            <h4 className="font-display font-bold text-2xl text-white">
+            <h4 className="font-display font-bold text-2xl sm:text-3xl text-white">
               The BTM 2-Week Risk-Free Trial Sprint
             </h4>
             <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
@@ -141,7 +160,7 @@ export const TrustSection = ({ onOpenBooking }) => {
 
           <button
             onClick={() => onOpenBooking('risk-free-trial')}
-            className="px-8 py-4 rounded-xl bg-gradient-to-r from-btm-cyan to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 shimmer-btm cursor-pointer"
+            className="relative z-10 px-8 py-4 rounded-xl bg-gradient-to-r from-btm-cyan to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 shimmer-btm cursor-pointer"
           >
             <span>Claim 14-Day Trial Sprint</span>
             <ArrowRight className="w-4 h-4" />
