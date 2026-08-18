@@ -59,8 +59,8 @@ export const HeroSection = ({ onOpenBooking }) => {
           className="w-full h-full object-cover object-center scale-105"
         />
         {/* Dark Enterprise Gradient Overlay for Sharp Maximum Contrast & Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001424]/95 via-[#00223A]/90 to-[#0A192F]/85" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#00182A] via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00101E]/98 via-[#001B2E]/95 to-[#0A192F]/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#001424] via-transparent to-black/70" />
       </div>
 
       {/* Floating 3D Engineering Telemetry Badges */}
@@ -101,14 +101,14 @@ export const HeroSection = ({ onOpenBooking }) => {
           className="flex justify-center mb-6"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-btm-cyan/50 text-xs font-mono text-slate-200 shadow-2xl hover:border-btm-cyan transition-colors">
-            <span className="w-2 h-2 rounded-full bg-btm-cyan animate-pulse" />
-            <span className="text-btm-cyan font-black tracking-wider uppercase">EXPERIENCE THE NEW GAME</span>
+            <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse" />
+            <span className="text-[#00F0FF] font-black tracking-wider uppercase">EXPERIENCE THE NEW GAME</span>
             <span className="text-slate-500">|</span>
             <span className="font-bold text-white">Your Roadmap. Our Execution Capacity.</span>
           </div>
         </motion.div>
 
-        {/* Master Bold Headline */}
+        {/* Master Bold Headline with Ultra-Bright High-Visibility Colors */}
         <div className="text-center max-w-5xl mx-auto mb-10">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -116,7 +116,7 @@ export const HeroSection = ({ onOpenBooking }) => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[76px] tracking-tight text-white leading-[1.08] mb-6 drop-shadow-2xl"
           >
-            Experience The <span className="text-btm-cyan text-gradient-cyan font-black">New Game</span> in <br className="hidden sm:inline" />
+            Experience The <span className="text-[#00F0FF] font-black drop-shadow-[0_0_25px_rgba(0,240,255,0.6)]">New Game</span> in <br className="hidden sm:inline" />
             <span className="text-white font-black drop-shadow-lg">Software Execution.</span>
           </motion.h1>
 
