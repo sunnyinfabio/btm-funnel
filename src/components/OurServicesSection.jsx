@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Users, 
@@ -14,6 +14,8 @@ import {
 } from 'lucide-react';
 
 export const OurServicesSection = ({ onOpenBooking }) => {
+  const [isPaused, setIsPaused] = useState(false);
+
   const services = [
     {
       id: 'staff-augmentation',
@@ -83,12 +85,15 @@ export const OurServicesSection = ({ onOpenBooking }) => {
     },
   ];
 
+  // Double the array for seamless infinite marquee loop
+  const marqueeServices = [...services, ...services];
+
   return (
     <section id="services" className="py-24 relative overflow-hidden bg-white border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Exact Live Website Heading & Subtitle */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-[#002B49] text-xs font-mono mb-4 shadow-sm">
             <Layers className="w-3.5 h-3.5 text-btm-cyan" />
             <span className="font-semibold text-slate-800">DIGITAL ACCELERATION CAPABILITIES</span>
@@ -101,16 +106,37 @@ export const OurServicesSection = ({ onOpenBooking }) => {
           </p>
         </div>
 
-        {/* 6 Full-Image Cards with Centered Heading & Hover Details Reveal */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mb-14">
-          {services.map((srv, idx) => (
-            <motion.div
-              key={srv.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="relative h-[360px] sm:h-[390px] rounded-3xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer"
+      </div>
+
+      {/* Continuous Horizontal Flow Marquee: Right to Left */}
+      <div
+        className="relative w-full overflow-hidden py-4 mb-14"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Left & Right Edge Gradient Fade Masks */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 bg-gradient-to-r from-white to-transparent z-30 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 bg-gradient-to-l from-white to-transparent z-30 pointer-events-none" />
+
+        {/* Animated Marquee Strip */}
+        <motion.div
+          className="flex gap-6 w-max"
+          animate={{
+            x: isPaused ? undefined : ['0%', '-50%'],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 38,
+              ease: 'linear',
+            },
+          }}
+        >
+          {marqueeServices.map((srv, idx) => (
+            <div
+              key={`${srv.id}-${idx}`}
+              className="w-[340px] sm:w-[380px] h-[370px] sm:h-[400px] rounded-3xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer relative shrink-0"
             >
               {/* Background Service Image */}
               <img
@@ -187,22 +213,22 @@ export const OurServicesSection = ({ onOpenBooking }) => {
 
               </div>
 
-            </motion.div>
+            </div>
           ))}
-        </div>
-
-        {/* View All Services / Request A Quote Button matching live website */}
-        <div className="text-center">
-          <button
-            onClick={() => onOpenBooking('services-quote')}
-            className="px-9 py-4 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-sm shadow-md hover:shadow-red-500/25 transition-all inline-flex items-center gap-2 cursor-pointer"
-          >
-            <span>Request A Service Quote</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-
+        </motion.div>
       </div>
+
+      {/* View All Services / Request A Quote Button matching live website */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <button
+          onClick={() => onOpenBooking('services-quote')}
+          className="px-9 py-4 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-sm shadow-md hover:shadow-red-500/25 transition-all inline-flex items-center gap-2 cursor-pointer"
+        >
+          <span>Request A Service Quote</span>
+          <ArrowRight className="w-4 h-4" />
+        </button>
+      </div>
+
     </section>
   );
 };
