@@ -9,7 +9,8 @@ import {
   ShieldCheck, 
   ArrowRight, 
   Sparkles,
-  Layers
+  Layers,
+  CheckCircle2
 } from 'lucide-react';
 
 export const OurServicesSection = ({ onOpenBooking }) => {
@@ -19,7 +20,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
       title: 'Staff Augmentation',
       badge: 'TOP 1% TALENT',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'Our IT staffing services provide the speed, professional acumen, and flexibility your team needs to scale quickly and complete development on time. Your Extended Team works as part of your local team, attending your regular daily meetings, and reporting directly to your managers, proving to be a real competitive advantage for your business.',
+      detailedDesc: 'Our IT staffing services provide the speed, professional acumen, and flexibility your team needs to scale quickly and complete development on time.',
       image: '/services/BTM_Service_SA_Img.jpg',
       icon: Users,
       deliverables: ['Direct Sprint Integration', 'Timezone Alignment', 'Zero Recruiter Fees'],
@@ -30,7 +31,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
       title: 'Dedicated Teams',
       badge: 'AUTONOMOUS PODS',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'BTM Outsourcing provides all the roles needed to complete the team you require. This team is typically composed of a Project Manager, Software engineers, Quality Assurance engineers, Data Engineers, AI & ML Experts, and other roles defined for each project.',
+      detailedDesc: 'BTM Outsourcing provides all the roles needed to complete the team you require, complete with Tech Leads, QA automation, and Data/AI specialists.',
       image: '/services/BTM_Service_DT_Img.jpg',
       icon: Cpu,
       deliverables: ['Tech Lead & SRE', 'Playwright Automated QA', 'Weekly Burndown Reports'],
@@ -41,7 +42,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
       title: 'Software Outsourcing',
       badge: 'END-TO-END DELIVERY',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'BTM Outsourcing is highly specialized in providing professional cost-effective custom web, desktop, and mobile software development services to companies around the world, helping them achieve strategic business goals.',
+      detailedDesc: 'BTM Outsourcing is highly specialized in providing professional cost-effective custom web, desktop, and mobile software development services.',
       image: '/services/BTM_Service_SO_Img.jpg',
       icon: Code2,
       deliverables: ['100% IP Clean-Room', 'Microservice Architectures', 'Production SLA'],
@@ -52,7 +53,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
       title: 'Web Development',
       badge: 'MODERN CLOUD & WEB',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'Whether your company needs a customer-facing portal, an enterprise-class web application to automate business processes, or modern cloud architecture, BTM Outsourcing customizes and integrates your existing systems to get the job done.',
+      detailedDesc: 'Whether your company needs a customer-facing portal or an enterprise-class web application to automate business processes, BTM has the solution.',
       image: '/services/BTM_Service_WD_Img.jpg',
       icon: Globe,
       deliverables: ['React 19 & Next.js 15', 'Sub-Second Edge Rendering', 'REST & gRPC APIs'],
@@ -63,7 +64,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
       title: 'Mobile Development',
       badge: 'CROSS-PLATFORM & NATIVE',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'Develop scalable and secure mobile solutions for iOS & Android. BTM engineers craft high-fidelity cross-platform and native mobile apps with biometric security, offline synchronization, and seamless backend API integrations.',
+      detailedDesc: 'Develop scalable and secure mobile solutions for iOS & Android with native biometrics, offline synchronization, and seamless backend APIs.',
       image: '/services/BTM_Service_MD_Img.jpg',
       icon: Smartphone,
       deliverables: ['Flutter & React Native', 'Offline-First Sync', 'Store Deployments'],
@@ -74,7 +75,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
       title: 'Quality Assurance',
       badge: 'AUTOMATED CI/CD QA',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'Ensuring zero defects through end-to-end automated testing pipelines, performance stress testing, and security vulnerability scanning. We integrate continuous QA testing directly into your deployment cycle.',
+      detailedDesc: 'Ensuring zero defects through end-to-end automated testing pipelines, performance stress testing, and continuous security scanning.',
       image: '/services/BTM_Service_QA_Img.jpg',
       icon: ShieldCheck,
       deliverables: ['Playwright & Cypress', 'Security Scanning (OWASP)', '99.4% Green Pass SLA'],
@@ -100,7 +101,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
           </p>
         </div>
 
-        {/* 6 Core Services Grid matching live website layout with overlay images */}
+        {/* 6 Full-Image Cards with Centered Heading & Hover Details Reveal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mb-14">
           {services.map((srv, idx) => (
             <motion.div
@@ -109,62 +110,83 @@ export const OurServicesSection = ({ onOpenBooking }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-md hover:shadow-2xl hover:border-btm-cyan transition-all duration-300 flex flex-col justify-between group relative"
+              className="relative h-[360px] sm:h-[390px] rounded-3xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer"
             >
-              {/* Service Hero Image with Dark Gradient Overlay matching live site */}
-              <div className="relative h-48 overflow-hidden bg-slate-900">
-                <img
-                  src={srv.image}
-                  alt={srv.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-85"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#002B49]/95 via-[#002B49]/60 to-transparent" />
+              {/* Background Service Image */}
+              <img
+                src={srv.image}
+                alt={srv.title}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                loading="lazy"
+              />
+
+              {/* Normal State: Dark Contrast Overlay + Centered Heading */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#00182A]/90 via-[#002B49]/60 to-[#00182A]/70 flex flex-col items-center justify-center p-6 text-center transition-opacity duration-300 group-hover:opacity-0">
+                <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-btm-cyan flex items-center justify-center mb-4 shadow-md">
+                  <srv.icon className="w-7 h-7 text-btm-cyan" />
+                </div>
+                <span className="px-3 py-1 rounded-full bg-slate-950/70 backdrop-blur-md text-[10px] font-mono text-btm-cyan font-bold border border-cyan-400/30 mb-2">
+                  {srv.badge}
+                </span>
+                <h3 className="font-display font-black text-2xl sm:text-3xl text-white tracking-tight drop-shadow-md">
+                  {srv.title}
+                </h3>
+                <span className="text-[11px] font-mono text-slate-300 mt-3 flex items-center gap-1 opacity-80">
+                  <span>Hover to View Details</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-btm-cyan" />
+                </span>
+              </div>
+
+              {/* Hover State: Frosted Glass Panel with Full Details Revealed */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#00182A]/95 via-[#002B49]/95 to-[#0A192F]/98 backdrop-blur-md p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out translate-y-3 group-hover:translate-y-0 text-white z-20">
                 
-                {/* Top Badge & Icon */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                  <span className="px-2.5 py-1 rounded-lg bg-slate-950/85 backdrop-blur-md text-[10px] font-mono text-btm-cyan font-bold border border-cyan-400/30 shadow-sm">
-                    {srv.badge}
-                  </span>
-                  <div className="w-8 h-8 rounded-xl bg-white/20 backdrop-blur-md text-white flex items-center justify-center">
-                    <srv.icon className="w-4 h-4" />
+                {/* Header on Hover */}
+                <div>
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-xl bg-btm-cyan/20 border border-btm-cyan/40 text-btm-cyan flex items-center justify-center">
+                        <srv.icon className="w-4 h-4" />
+                      </div>
+                      <span className="text-[10px] font-mono uppercase text-btm-cyan font-bold">
+                        {srv.badge}
+                      </span>
+                    </div>
+                    <span className="text-[9.5px] font-mono text-emerald-400 flex items-center gap-1 font-bold">
+                      <CheckCircle2 className="w-3 h-3" /> SLA Verified
+                    </span>
+                  </div>
+
+                  <h4 className="font-display font-bold text-xl text-white mb-2">
+                    {srv.title}
+                  </h4>
+
+                  <p className="text-xs text-slate-300 leading-relaxed line-clamp-3 mb-4">
+                    {srv.shortDesc}
+                  </p>
+
+                  {/* Bullet Deliverables */}
+                  <div className="space-y-1.5 pt-2 border-t border-white/10">
+                    {srv.deliverables.map((item) => (
+                      <div key={item} className="flex items-center gap-2 text-xs font-mono text-slate-200">
+                        <span className="w-1.5 h-1.5 rounded-full bg-btm-cyan shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Title over Image */}
-                <div className="absolute bottom-4 left-5 right-5 z-10">
-                  <h3 className="font-display font-bold text-xl text-white group-hover:text-btm-cyan transition-colors">
-                    {srv.title}
-                  </h3>
-                </div>
-              </div>
-
-              {/* Service Body Content */}
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {srv.shortDesc}
-                </p>
-
-                {/* Bullet Deliverables */}
-                <div className="pt-3 border-t border-slate-100 space-y-2">
-                  {srv.deliverables.map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-xs font-mono text-slate-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-btm-cyan" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Action CTA Link */}
+                {/* Hover Footer CTA */}
                 <button
                   type="button"
                   onClick={() => onOpenBooking(`service-${srv.id}`)}
-                  className="w-full pt-3 border-t border-slate-100 text-xs font-bold text-[#E62E2E] hover:text-[#002B49] flex items-center justify-between transition-colors cursor-pointer group/btn"
+                  className="w-full py-3 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
                 >
-                  <span className="group-hover/btn:underline">{srv.ctaText}</span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  <span>{srv.ctaText}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
+
               </div>
+
             </motion.div>
           ))}
         </div>
