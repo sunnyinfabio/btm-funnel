@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+  Code2, 
+  Sparkles, 
+  ArrowRight, 
+  CheckCircle2, 
+  Layers, 
+  Zap, 
+  Check, 
+  Plus, 
+  RotateCw, 
+  Lock, 
   Cpu, 
   Terminal, 
-  Cloud, 
   Database, 
+  Server, 
   Bot, 
   ShieldCheck, 
-  Smartphone, 
-  Sparkles, 
-  ArrowRight,
-  CheckCircle2,
-  Code2,
-  GitBranch,
-  Layers,
-  Server,
-  Zap,
-  Check,
-  Eye,
-  Plus,
-  Trash2
+  Smartphone,
+  Globe
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export const InteractiveTechStack = ({ onOpenBooking }) => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedCardTab, setSelectedCardTab] = useState({});
+  const [flippedCards, setFlippedCards] = useState({});
   const [selectedSquadStack, setSelectedSquadStack] = useState(['.NET Core & C#', 'React & Next.js', 'AWS & Cloud Architecture']);
 
   const categories = [
@@ -50,7 +49,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['ASP.NET Core', 'Entity Framework', 'gRPC', 'MediatR'],
       squadSpec: '1x Lead Architect + 3x Senior .NET Engineers',
       score: 99.8,
-      accentColor: 'from-blue-500/20 to-cyan-500/10 border-blue-500/40 text-blue-600',
+      icon: Terminal,
+      accentColor: 'border-blue-200 bg-blue-50/60 text-blue-700',
     },
     { 
       id: 'java',
@@ -63,7 +63,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['Spring Boot 3', 'Hibernate', 'Kafka Streams', 'Micrometer'],
       squadSpec: '1x Principal Java Lead + 2x Senior Java Engineers + 1x Kafka Specialist',
       score: 99.5,
-      accentColor: 'from-orange-500/20 to-amber-500/10 border-orange-500/40 text-orange-600',
+      icon: Server,
+      accentColor: 'border-orange-200 bg-orange-50/60 text-orange-700',
     },
     { 
       id: 'python',
@@ -76,7 +77,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['FastAPI', 'Celery', 'Pydantic', 'NumPy / Pandas'],
       squadSpec: '1x AI/FastAPI Lead + 2x Python Data Engineers',
       score: 99.2,
-      accentColor: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/40 text-emerald-600',
+      icon: Cpu,
+      accentColor: 'border-emerald-200 bg-emerald-50/60 text-emerald-700',
     },
     { 
       id: 'node',
@@ -89,7 +91,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['NestJS', 'Express', 'TypeScript', 'Prisma ORM'],
       squadSpec: '1x Full-Stack Lead + 2x Senior Node/TS Developers',
       score: 99.0,
-      accentColor: 'from-green-500/20 to-emerald-500/10 border-green-500/40 text-green-600',
+      icon: Code2,
+      accentColor: 'border-green-200 bg-green-50/60 text-green-700',
     },
     { 
       id: 'react',
@@ -102,7 +105,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['Next.js 15', 'Tailwind CSS', 'Framer Motion', 'Zustand / Redux'],
       squadSpec: '1x Senior Frontend Architect + 2x React UI/UX Technologists',
       score: 99.7,
-      accentColor: 'from-cyan-500/20 to-sky-500/10 border-cyan-500/40 text-cyan-600',
+      icon: Globe,
+      accentColor: 'border-cyan-200 bg-cyan-50/60 text-btm-cyan',
     },
     { 
       id: 'mobile',
@@ -115,7 +119,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['React Native', 'Flutter', 'Swift (iOS)', 'Kotlin (Android)'],
       squadSpec: '1x Mobile Tech Lead + 2x Senior iOS/Android Specialists',
       score: 98.9,
-      accentColor: 'from-purple-500/20 to-indigo-500/10 border-purple-500/40 text-purple-600',
+      icon: Smartphone,
+      accentColor: 'border-purple-200 bg-purple-50/60 text-purple-700',
     },
     { 
       id: 'aws',
@@ -128,7 +133,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['AWS EKS', 'Lambda', 'Terraform', 'CloudFormation'],
       squadSpec: '1x AWS Certified Solutions Architect + 1x DevOps Engineer',
       score: 99.9,
-      accentColor: 'from-amber-500/20 to-yellow-500/10 border-amber-500/40 text-amber-600',
+      icon: Layers,
+      accentColor: 'border-amber-200 bg-amber-50/60 text-amber-700',
     },
     { 
       id: 'azure',
@@ -141,7 +147,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['Azure AKS', 'Azure DevOps', 'Cosmos DB', 'API Management'],
       squadSpec: '1x Azure Enterprise Architect + 1x Cloud Security Specialist',
       score: 99.6,
-      accentColor: 'from-blue-500/20 to-sky-500/10 border-blue-500/40 text-blue-600',
+      icon: Server,
+      accentColor: 'border-blue-200 bg-blue-50/60 text-blue-700',
     },
     { 
       id: 'k8s',
@@ -154,7 +161,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['Kubernetes', 'ArgoCD', 'Docker', 'Helm / Istio'],
       squadSpec: '1x Senior Site Reliability Engineer (SRE) + 1x CI/CD Specialist',
       score: 99.4,
-      accentColor: 'from-cyan-500/20 to-blue-500/10 border-cyan-500/40 text-cyan-600',
+      icon: Layers,
+      accentColor: 'border-cyan-200 bg-cyan-50/60 text-btm-cyan',
     },
     { 
       id: 'kafka',
@@ -167,7 +175,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['Kafka', 'Flink', 'Schema Registry', 'Debezium CDC'],
       squadSpec: '1x Distributed Systems Architect + 1x Data Pipeline Engineer',
       score: 99.3,
-      accentColor: 'from-purple-500/20 to-pink-500/10 border-purple-500/40 text-purple-600',
+      icon: Database,
+      accentColor: 'border-purple-200 bg-purple-50/60 text-purple-700',
     },
     { 
       id: 'postgres',
@@ -180,7 +189,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['PostgreSQL', 'MongoDB', 'Redis Cluster', 'Snowflake'],
       squadSpec: '1x Principal Database Architect + 1x Data Optimization Lead',
       score: 99.8,
-      accentColor: 'from-blue-500/20 to-indigo-500/10 border-blue-500/40 text-blue-600',
+      icon: Database,
+      accentColor: 'border-indigo-200 bg-indigo-50/60 text-indigo-700',
     },
     { 
       id: 'ai',
@@ -193,7 +203,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['LangChain', 'LlamaIndex', 'Pinecone', 'vLLM / HuggingFace'],
       squadSpec: '1x Applied AI Lead + 2x Machine Learning Engineers',
       score: 99.1,
-      accentColor: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/40 text-emerald-600',
+      icon: Bot,
+      accentColor: 'border-emerald-200 bg-emerald-50/60 text-emerald-700',
     },
     { 
       id: 'qa',
@@ -206,9 +217,15 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
       frameworks: ['Playwright', 'Cypress', 'JMeter', 'SonarQube / OWASP'],
       squadSpec: '1x Automated QA Lead + 1x Security/Performance Engineer',
       score: 99.6,
-      accentColor: 'from-rose-500/20 to-red-500/10 border-rose-500/40 text-rose-600',
+      icon: ShieldCheck,
+      accentColor: 'border-rose-200 bg-rose-50/60 text-rose-700',
     },
   ];
+
+  const toggleFlip = (id, e) => {
+    e?.stopPropagation();
+    setFlippedCards(prev => ({ ...prev, [id]: !prev[id] }));
+  };
 
   const handleToggleSquadStack = (name, e) => {
     e.stopPropagation();
@@ -217,7 +234,7 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
     } else {
       setSelectedSquadStack([...selectedSquadStack, name]);
       confetti({
-        particleCount: 40,
+        particleCount: 35,
         spread: 50,
         origin: { y: 0.8 },
         colors: ['#00A3E0', '#00D2FF', '#F5A623']
@@ -235,8 +252,8 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-slate-200 text-btm-cyan text-xs font-mono mb-4 shadow-sm">
-            <Code2 className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-slate-200 text-[#002B49] text-xs font-mono mb-4 shadow-sm">
+            <Code2 className="w-3.5 h-3.5 text-btm-cyan" />
             <span className="font-semibold text-slate-800">ENTERPRISE TECHNOLOGY ECOSYSTEM</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl text-[#002B49] tracking-tight mb-4">
@@ -307,153 +324,153 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
           ))}
         </div>
 
-        {/* Technologies Grid Encased in Modern Tech Frames */}
+        {/* 3D Flip Notes Cards Grid */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           <AnimatePresence>
             {filteredTech.map((tech) => {
-              const currentTab = selectedCardTab[tech.id] || 'overview';
+              const isFlipped = !!flippedCards[tech.id];
               const isInSquad = selectedSquadStack.includes(tech.name);
 
               return (
-                <motion.div
+                <div
                   key={tech.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                  className="rounded-3xl border border-slate-200 hover:border-btm-cyan/80 bg-white shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between relative overflow-hidden group"
+                  className="h-[280px] sm:h-[300px] [perspective:1200px]"
                 >
-                  {/* Modern Terminal Window Frame Header (Mac/Linux Traffic Lights) */}
-                  <div className="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-                      <span className="text-[10px] font-mono text-slate-400 ml-1.5">
-                        {tech.version}
-                      </span>
-                    </div>
-
-                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-cyan-50 border border-cyan-200 text-btm-cyan">
-                      {tech.seniority}
-                    </span>
-                  </div>
-
-                  {/* Frame Content Body */}
-                  <div className="p-6">
-                    {/* Title & Match Score Badge */}
-                    <div className="flex items-start justify-between gap-2 mb-3">
-                      <div>
-                        <h3 className="font-display font-black text-xl text-[#002B49] group-hover:text-btm-cyan transition-colors">
-                          {tech.name}
-                        </h3>
-                        <span className="text-[10px] font-mono text-emerald-600 font-bold flex items-center gap-1 mt-0.5">
-                          <CheckCircle2 className="w-3 h-3" /> SLA Match: {tech.score}%
+                  <div
+                    className={`relative w-full h-full duration-500 [transform-style:preserve-3d] transition-transform ${
+                      isFlipped ? '[transform:rotateY(180deg)]' : ''
+                    }`}
+                  >
+                    
+                    {/* ================= FRONT SIDE (Clean Note Card: Heading, Badge, Version, Flip Trigger) ================= */}
+                    <div 
+                      onClick={(e) => toggleFlip(tech.id, e)}
+                      className="absolute inset-0 [backface-visibility:hidden] rounded-3xl p-6 bg-white border border-slate-200 shadow-md hover:shadow-xl hover:border-btm-cyan transition-all flex flex-col justify-between cursor-pointer group"
+                    >
+                      {/* Top Bar: Version & Seniority */}
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10.5px] font-mono font-bold px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 text-slate-700">
+                          {tech.version}
+                        </span>
+                        <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-cyan-50 border border-cyan-200 text-btm-cyan">
+                          {tech.seniority}
                         </span>
                       </div>
 
-                      {/* Add to Squad Toggle Button */}
-                      <button
-                        type="button"
-                        onClick={(e) => handleToggleSquadStack(tech.name, e)}
-                        className={`p-2 rounded-xl border text-xs transition-all cursor-pointer ${
-                          isInSquad 
-                            ? 'bg-btm-cyan text-white border-btm-cyan shadow-sm' 
-                            : 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-700'
-                        }`}
-                        title={isInSquad ? 'Remove from squad' : 'Add to squad'}
-                      >
-                        {isInSquad ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                      </button>
+                      {/* Middle: Icon & Bold Heading */}
+                      <div className="space-y-3">
+                        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border shadow-sm ${tech.accentColor}`}>
+                          <tech.icon className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h3 className="font-display font-black text-2xl text-[#002B49] group-hover:text-btm-cyan transition-colors">
+                            {tech.name}
+                          </h3>
+                          <span className="text-[11px] font-mono text-emerald-600 font-bold flex items-center gap-1 mt-1">
+                            <CheckCircle2 className="w-3.5 h-3.5" /> SLA Match: {tech.score}%
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Bottom: Flip Indicator */}
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-btm-cyan">
+                        <span className="flex items-center gap-1.5 font-semibold">
+                          <RotateCw className="w-3.5 h-3.5 text-btm-cyan group-hover:rotate-180 transition-transform duration-500" />
+                          Click to Flip for Tech Spec
+                        </span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
 
-                    {/* Frame Tab Switcher: Overview vs Blueprint vs Squad */}
-                    <div className="flex rounded-xl bg-slate-100 p-1 mb-4 text-[10px] font-mono">
-                      <button
-                        type="button"
-                        onClick={() => setSelectedCardTab({ ...selectedCardTab, [tech.id]: 'overview' })}
-                        className={`flex-1 py-1 rounded-lg transition-all ${
-                          currentTab === 'overview' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-500 hover:text-slate-900'
-                        }`}
-                      >
-                        Overview
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setSelectedCardTab({ ...selectedCardTab, [tech.id]: 'blueprint' })}
-                        className={`flex-1 py-1 rounded-lg transition-all ${
-                          currentTab === 'blueprint' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-500 hover:text-slate-900'
-                        }`}
-                      >
-                        Blueprint
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setSelectedCardTab({ ...selectedCardTab, [tech.id]: 'squad' })}
-                        className={`flex-1 py-1 rounded-lg transition-all ${
-                          currentTab === 'squad' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-500 hover:text-slate-900'
-                        }`}
-                      >
-                        Squad Spec
-                      </button>
-                    </div>
+                    {/* ================= BACK SIDE (Detailed Specs, Blueprint, Squad Roster, CTAs) ================= */}
+                    <div 
+                      className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-5 bg-slate-900 text-white border border-slate-700 shadow-2xl flex flex-col justify-between overflow-y-auto"
+                    >
+                      {/* Top Header on Back */}
+                      <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                        <div>
+                          <span className="text-xs font-bold text-white font-display block">
+                            {tech.name}
+                          </span>
+                          <span className="text-[10px] font-mono text-emerald-400">
+                            SLA Match: {tech.score}%
+                          </span>
+                        </div>
 
-                    {/* Dynamic Tab Content */}
-                    <div className="min-h-[75px] mb-4">
-                      {currentTab === 'overview' && (
-                        <p className="text-xs text-slate-600 leading-relaxed">
+                        <div className="flex items-center gap-1.5">
+                          {/* Toggle Squad Button */}
+                          <button
+                            type="button"
+                            onClick={(e) => handleToggleSquadStack(tech.name, e)}
+                            className={`p-1.5 rounded-lg border text-[11px] font-mono transition-all cursor-pointer ${
+                              isInSquad
+                                ? 'bg-btm-cyan text-slate-950 border-btm-cyan font-bold'
+                                : 'bg-slate-800 border-slate-700 text-slate-300 hover:text-white'
+                            }`}
+                            title={isInSquad ? 'Remove from Squad' : 'Add to Squad'}
+                          >
+                            {isInSquad ? '✓ In Squad' : '+ Add'}
+                          </button>
+
+                          {/* Flip Back Button */}
+                          <button
+                            type="button"
+                            onClick={(e) => toggleFlip(tech.id, e)}
+                            className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 hover:text-white cursor-pointer"
+                            title="Flip back"
+                          >
+                            <RotateCw className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Content: Description & Blueprint */}
+                      <div className="space-y-2 py-2">
+                        <p className="text-[11px] text-slate-300 leading-relaxed">
                           {tech.desc}
                         </p>
-                      )}
 
-                      {currentTab === 'blueprint' && (
-                        <div className="p-3 rounded-xl bg-slate-900 text-emerald-300 font-mono text-[10.5px] leading-relaxed border border-slate-800">
-                          <span className="text-slate-400 block text-[9px] mb-1">// Reference Architecture Flow</span>
+                        <div className="p-2 rounded-xl bg-slate-950 border border-slate-800 text-[10px] font-mono text-emerald-300">
+                          <span className="text-slate-500 block text-[9px]">// Architecture Flow</span>
                           {tech.blueprint}
                         </div>
-                      )}
 
-                      {currentTab === 'squad' && (
-                        <div className="p-3 rounded-xl bg-cyan-50 text-slate-800 font-mono text-[11px] leading-relaxed border border-cyan-200">
-                          <span className="text-btm-cyan font-bold block text-[9px] mb-1">// Standard Pod Composition</span>
-                          {tech.squadSpec}
+                        {/* Framework Pills */}
+                        <div className="flex flex-wrap gap-1">
+                          {tech.frameworks.map((fw) => (
+                            <span key={fw} className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                              {fw}
+                            </span>
+                          ))}
                         </div>
-                      )}
-                    </div>
+                      </div>
 
-                    {/* Framework Tags */}
-                    <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100">
-                      {tech.frameworks.map((fw) => (
-                        <span key={fw} className="text-[9.5px] font-mono px-2 py-0.5 rounded-md bg-slate-50 border border-slate-200 text-slate-700">
-                          {fw}
+                      {/* Footer Actions on Back */}
+                      <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs font-mono">
+                        <span className="text-[10px] text-amber-400 flex items-center gap-1 font-semibold">
+                          <Zap className="w-3 h-3" /> &lt; 14 Days SLA
                         </span>
-                      ))}
+
+                        <button
+                          type="button"
+                          onClick={() => onOpenBooking(`tech-${tech.name.toLowerCase()}`)}
+                          className="text-xs font-bold text-btm-cyan hover:text-white flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <span>Deploy Squad</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </button>
+                      </div>
+
                     </div>
-                  </div>
 
-                  {/* Frame Footer Action */}
-                  <div className="px-6 py-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs font-mono">
-                    <span className="text-slate-500 font-semibold flex items-center gap-1">
-                      <Zap className="w-3.5 h-3.5 text-amber-500" /> &lt; 14 Days SLA
-                    </span>
-
-                    <button
-                      type="button"
-                      onClick={() => onOpenBooking(`tech-${tech.name.toLowerCase()}`)}
-                      className="text-btm-cyan font-bold hover:text-[#002B49] flex items-center gap-1 transition-colors cursor-pointer"
-                    >
-                      <span>Deploy Squad</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </AnimatePresence>
         </motion.div>
 
-        {/* Bottom Modern Architecture Scoping Card */}
+        {/* Custom Tech Stack Scoping Banner */}
         <div className="glass-card-btm rounded-3xl p-7 sm:p-9 border border-slate-200 bg-gradient-to-r from-slate-950 via-[#002B49] to-slate-950 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
           <div className="space-y-1">
             <span className="text-xs font-mono uppercase text-btm-cyan font-bold">Custom Tech Stack Scoping</span>
@@ -467,9 +484,9 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
 
           <button
             onClick={() => onOpenBooking('niche-stack')}
-            className="px-8 py-4 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 shimmer-btm cursor-pointer"
+            className="px-8 py-4 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 shimmer-btm cursor-pointer"
           >
-            <Sparkles className="w-4 h-4 text-white" />
+            <Sparkles className="w-4 h-4 text-slate-950" />
             <span>Request Custom Stack Pod</span>
             <ArrowRight className="w-4 h-4" />
           </button>
