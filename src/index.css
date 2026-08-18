@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom BTM Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00A3E0;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-1.5deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px -5px rgba(0, 163, 224, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px 5px rgba(0, 163, 224, 0.5);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(200%) rotate(25deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 16s linear infinite;
+  }
+
+  .bg-btm-mesh {
+    background: radial-gradient(circle at 50% -10%, rgba(0, 163, 224, 0.12) 0%, rgba(241, 245, 249, 0.75) 45%, #F8FAFC 80%);
+  }
+
+  .bg-btm-grid {
+    background-size: 36px 36px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 43, 73, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 43, 73, 0.04) 1px, transparent 1px);
+  }
+
+  .glass-card-btm {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 10px 30px -5px rgba(0, 43, 73, 0.06), 0 0 1px 1px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-btm:hover {
+    border-color: rgba(0, 163, 224, 0.5);
+    box-shadow: 0 20px 40px -10px rgba(0, 43, 73, 0.12), 0 0 1px 1px rgba(0, 163, 224, 0.25);
+    transform: translateY(-3px);
+  }
+
+  .glass-nav-btm {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #002B49 15%, #00A3E0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #002B49 10%, #D97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .shimmer-btm {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-btm::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: rotate(25deg);
+    animation: shimmer 3s infinite;
+  }
+}
