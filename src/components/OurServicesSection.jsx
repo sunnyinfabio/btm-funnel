@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   Users, 
   Cpu, 
@@ -9,74 +9,76 @@ import {
   ShieldCheck, 
   ArrowRight, 
   Sparkles,
-  Layers,
-  ChevronLeft,
-  ChevronRight
+  Layers
 } from 'lucide-react';
 
 export const OurServicesSection = ({ onOpenBooking }) => {
-  const [activeTab, setActiveTab] = useState(0);
-
   const services = [
     {
       id: 'staff-augmentation',
       title: 'Staff Augmentation',
+      badge: 'TOP 1% TALENT',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'Plug pre-vetted senior software engineers directly into your sprint cycle in less than 14 days without long hiring cycles.',
+      detailedDesc: 'Our IT staffing services provide the speed, professional acumen, and flexibility your team needs to scale quickly and complete development on time. Your Extended Team works as part of your local team, attending your regular daily meetings, and reporting directly to your managers, proving to be a real competitive advantage for your business.',
       image: '/services/BTM_Service_SA_Img.jpg',
       icon: Users,
-      badge: 'TOP 1% TALENT',
       deliverables: ['Direct Sprint Integration', 'Timezone Alignment', 'Zero Recruiter Fees'],
+      ctaText: 'Explore Staff Augmentation',
     },
     {
       id: 'dedicated-teams',
       title: 'Dedicated Teams',
+      badge: 'AUTONOMOUS PODS',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'Self-governing, cross-functional engineering pods complete with Tech Leads, QA automation, and domain specialists.',
+      detailedDesc: 'BTM Outsourcing provides all the roles needed to complete the team you require. This team is typically composed of a Project Manager, Software engineers, Quality Assurance engineers, Data Engineers, AI & ML Experts, and other roles defined for each project.',
       image: '/services/BTM_Service_DT_Img.jpg',
       icon: Cpu,
-      badge: 'AUTONOMOUS PODS',
       deliverables: ['Tech Lead & SRE', 'Playwright Automated QA', 'Weekly Burndown Reports'],
+      ctaText: 'Explore Dedicated Teams',
     },
     {
       id: 'software-outsourcing',
       title: 'Software Outsourcing',
+      badge: 'END-TO-END DELIVERY',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'Turnkey end-to-end product delivery from architectural blueprinting through production deployment and scaling.',
+      detailedDesc: 'BTM Outsourcing is highly specialized in providing professional cost-effective custom web, desktop, and mobile software development services to companies around the world, helping them achieve strategic business goals.',
       image: '/services/BTM_Service_SO_Img.jpg',
       icon: Code2,
-      badge: 'END-TO-END DELIVERY',
       deliverables: ['100% IP Clean-Room', 'Microservice Architectures', 'Production SLA'],
+      ctaText: 'Explore Software Outsourcing',
     },
     {
       id: 'web-development',
       title: 'Web Development',
+      badge: 'MODERN CLOUD & WEB',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'High-performance SSR/SSG portals, scalable SaaS platforms, and enterprise cloud applications built on modern frameworks.',
+      detailedDesc: 'Whether your company needs a customer-facing portal, an enterprise-class web application to automate business processes, or modern cloud architecture, BTM Outsourcing customizes and integrates your existing systems to get the job done.',
       image: '/services/BTM_Service_WD_Img.jpg',
       icon: Globe,
-      badge: 'MODERN CLOUD & WEB',
       deliverables: ['React 19 & Next.js 15', 'Sub-Second Edge Rendering', 'REST & gRPC APIs'],
+      ctaText: 'Explore Web Development',
     },
     {
       id: 'mobile-development',
       title: 'Mobile Development',
+      badge: 'CROSS-PLATFORM & NATIVE',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'Mission-critical iOS and Android native and cross-platform mobile apps with offline synchronization and native biometric security.',
+      detailedDesc: 'Develop scalable and secure mobile solutions for iOS & Android. BTM engineers craft high-fidelity cross-platform and native mobile apps with biometric security, offline synchronization, and seamless backend API integrations.',
       image: '/services/BTM_Service_MD_Img.jpg',
       icon: Smartphone,
-      badge: 'CROSS-PLATFORM & NATIVE',
       deliverables: ['Flutter & React Native', 'Offline-First Sync', 'Store Deployments'],
+      ctaText: 'Explore Mobile Development',
     },
     {
       id: 'quality-assurance',
       title: 'Quality Assurance',
+      badge: 'AUTOMATED CI/CD QA',
       shortDesc: 'The extra talent needed to boost your projects. Top 1% Engineers fully integrated with your team.',
-      detailedDesc: 'Automated CI/CD end-to-end regression test suites, penetration testing, performance benchmarking, and zero-defect deployments.',
+      detailedDesc: 'Ensuring zero defects through end-to-end automated testing pipelines, performance stress testing, and security vulnerability scanning. We integrate continuous QA testing directly into your deployment cycle.',
       image: '/services/BTM_Service_QA_Img.jpg',
       icon: ShieldCheck,
-      badge: 'AUTOMATED CI/CD QA',
       deliverables: ['Playwright & Cypress', 'Security Scanning (OWASP)', '99.4% Green Pass SLA'],
+      ctaText: 'Explore Quality Assurance',
     },
   ];
 
@@ -119,9 +121,9 @@ export const OurServicesSection = ({ onOpenBooking }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#002B49]/95 via-[#002B49]/60 to-transparent" />
                 
-                {/* Top Badge */}
+                {/* Top Badge & Icon */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                  <span className="px-2.5 py-1 rounded-lg bg-slate-950/80 backdrop-blur-md text-[10px] font-mono text-btm-cyan font-bold border border-cyan-400/30 shadow-sm">
+                  <span className="px-2.5 py-1 rounded-lg bg-slate-950/85 backdrop-blur-md text-[10px] font-mono text-btm-cyan font-bold border border-cyan-400/30 shadow-sm">
                     {srv.badge}
                   </span>
                   <div className="w-8 h-8 rounded-xl bg-white/20 backdrop-blur-md text-white flex items-center justify-center">
@@ -159,7 +161,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
                   onClick={() => onOpenBooking(`service-${srv.id}`)}
                   className="w-full pt-3 border-t border-slate-100 text-xs font-bold text-[#E62E2E] hover:text-[#002B49] flex items-center justify-between transition-colors cursor-pointer group/btn"
                 >
-                  <span className="group-hover/btn:underline">Explore {srv.title}</span>
+                  <span className="group-hover/btn:underline">{srv.ctaText}</span>
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -167,7 +169,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
           ))}
         </div>
 
-        {/* View All Services / Get In Touch Button matching live website */}
+        {/* View All Services / Request A Quote Button matching live website */}
         <div className="text-center">
           <button
             onClick={() => onOpenBooking('services-quote')}
