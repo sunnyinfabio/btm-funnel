@@ -172,7 +172,7 @@ export const DevelopmentProcess = ({ onOpenBooking }) => {
               <div className="pt-2 flex items-center gap-3">
                 <button
                   onClick={() => onOpenBooking('process-timeline')}
-                  className="py-3.5 px-6 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-xs shadow-btm-glow hover:opacity-95 transition-all flex items-center gap-2 shimmer-btm cursor-pointer"
+                  className="py-3.5 px-7 rounded-full bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-xs shadow-btm-glow hover:opacity-95 transition-all flex items-center gap-2 shimmer-btm cursor-pointer"
                 >
                   <span>Initiate Phase {steps[activeStep].step} Scoping</span>
                   <ArrowRight className="w-4 h-4" />

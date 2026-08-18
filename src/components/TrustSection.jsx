@@ -215,7 +215,7 @@ export const TrustSection = ({ onOpenBooking }) => {
 
           <button
             onClick={() => onOpenBooking('risk-free-trial')}
-            className="relative z-10 px-8 py-3.5 rounded-xl bg-gradient-to-r from-btm-cyan to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 shimmer-btm cursor-pointer"
+            className="relative z-10 px-8 py-3.5 rounded-full bg-gradient-to-r from-btm-cyan to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 shimmer-btm cursor-pointer"
           >
             <span>Claim 14-Day Trial Sprint</span>
             <ArrowRight className="w-4 h-4" />
@@ -252,7 +252,7 @@ export const TrustSection = ({ onOpenBooking }) => {
 
                 <button
                   onClick={() => setSelectedCertModal(null)}
-                  className="p-2 rounded-xl hover:bg-slate-100 text-slate-400 hover:text-slate-700 cursor-pointer"
+                  className="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -284,12 +284,12 @@ export const TrustSection = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* Modal Footer */}
+              {/* Modal Footer - Pill Buttons */}
               <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setSelectedCertModal(null)}
-                  className="px-4 py-2 rounded-xl border border-slate-200 text-slate-700 font-mono text-xs hover:bg-slate-50 cursor-pointer"
+                  className="px-5 py-2 rounded-full border border-slate-200 text-slate-700 font-mono text-xs hover:bg-slate-50 cursor-pointer"
                 >
                   Close
                 </button>
@@ -300,7 +300,7 @@ export const TrustSection = ({ onOpenBooking }) => {
                     setSelectedCertModal(null);
                     onOpenBooking(`security-report-${cert.id}`);
                   }}
-                  className="px-6 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md flex items-center gap-2 cursor-pointer"
+                  className="px-7 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md flex items-center gap-2 cursor-pointer"
                 >
                   <span>Request Full {selectedCertModal.title} Report</span>
                   <ArrowRight className="w-3.5 h-3.5" />

@@ -331,7 +331,7 @@ export const BookingModal = ({ isOpen, onClose, initialPathway, prefilledData })
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="px-5 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-colors flex items-center gap-1.5"
+                      className="px-6 py-3.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-colors flex items-center gap-1.5 cursor-pointer"
                     >
                       <ChevronLeft className="w-4 h-4" />
                       <span>Back</span>
@@ -340,7 +340,7 @@ export const BookingModal = ({ isOpen, onClose, initialPathway, prefilledData })
                     <button
                       type="button"
                       onClick={handleNext}
-                      className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2"
+                      className="flex-1 py-3.5 rounded-full bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <span>Choose Capacity Review Slot</span>
                       <ArrowRight className="w-4 h-4" />
@@ -410,7 +410,7 @@ export const BookingModal = ({ isOpen, onClose, initialPathway, prefilledData })
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="px-5 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-colors flex items-center gap-1.5"
+                      className="px-6 py-3.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-colors flex items-center gap-1.5 cursor-pointer"
                     >
                       <ChevronLeft className="w-4 h-4" />
                       <span>Back</span>
@@ -420,7 +420,7 @@ export const BookingModal = ({ isOpen, onClose, initialPathway, prefilledData })
                       type="button"
                       disabled={isSubmitting}
                       onClick={handleSubmit}
-                      className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2"
+                      className="flex-1 py-3.5 rounded-full bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
                     >
                       {isSubmitting ? (
                         <span>Locking Briefing Slot...</span>
@@ -461,7 +461,7 @@ export const BookingModal = ({ isOpen, onClose, initialPathway, prefilledData })
 
               <button
                 onClick={handleResetAndClose}
-                className="px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-btm-navy text-white font-semibold text-sm transition-colors"
+                className="px-8 py-3.5 rounded-full bg-slate-900 hover:bg-btm-navy text-white font-semibold text-sm transition-colors cursor-pointer"
               >
                 Return to Overview
               </button>

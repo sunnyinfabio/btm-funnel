@@ -215,7 +215,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
                   {srv.shortDesc}
                 </p>
 
-                <div className="px-4 py-2 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-mono font-bold flex items-center gap-1.5 group-hover:bg-btm-cyan group-hover:text-slate-950 group-hover:border-btm-cyan transition-all">
+                <div className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-mono font-bold flex items-center gap-1.5 group-hover:bg-btm-cyan group-hover:text-slate-950 group-hover:border-btm-cyan transition-all">
                   <span>Inspect Service Spec</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>
@@ -226,11 +226,11 @@ export const OurServicesSection = ({ onOpenBooking }) => {
         </motion.div>
       </div>
 
-      {/* Minimal Bottom Trigger */}
+      {/* Minimal Bottom Trigger - Pill Shaped Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <button
           onClick={() => onOpenBooking('services-quote')}
-          className="px-8 py-3.5 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-xs shadow-md hover:shadow-red-500/25 transition-all inline-flex items-center gap-2 cursor-pointer"
+          className="px-8 py-3.5 rounded-full bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-xs shadow-md hover:shadow-red-500/25 transition-all inline-flex items-center gap-2 cursor-pointer"
         >
           <span>Request A Custom Service Quote</span>
           <ArrowRight className="w-4 h-4" />
@@ -255,7 +255,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">
+                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
                         {selectedServiceModal.badge}
                       </span>
                       <span className="text-[10px] font-mono text-emerald-600 font-bold flex items-center gap-1">
@@ -270,7 +270,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
 
                 <button
                   onClick={() => setSelectedServiceModal(null)}
-                  className="p-2 rounded-xl hover:bg-slate-100 text-slate-400 hover:text-slate-700 cursor-pointer"
+                  className="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -331,7 +331,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
                   <button
                     type="button"
                     onClick={() => setSelectedServiceModal(null)}
-                    className="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-mono text-xs hover:bg-slate-50 cursor-pointer"
+                    className="px-4 py-2.5 rounded-full border border-slate-200 text-slate-700 font-mono text-xs hover:bg-slate-50 cursor-pointer"
                   >
                     Close
                   </button>
@@ -342,7 +342,7 @@ export const OurServicesSection = ({ onOpenBooking }) => {
                       setSelectedServiceModal(null);
                       onOpenBooking(`service-${srv.id}`);
                     }}
-                    className="px-6 py-2.5 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-xs shadow-md flex items-center gap-2 cursor-pointer"
+                    className="px-6 py-2.5 rounded-full bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-xs shadow-md flex items-center gap-2 cursor-pointer"
                   >
                     <span>Request {selectedServiceModal.title} Squad</span>
                     <ArrowRight className="w-3.5 h-3.5" />

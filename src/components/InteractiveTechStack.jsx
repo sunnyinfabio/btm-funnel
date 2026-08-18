@@ -293,7 +293,7 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
 
             <button
               onClick={() => onOpenBooking(`pod-${selectedSquadStack.join('-').toLowerCase()}`)}
-              className="px-4 py-1.5 rounded-lg bg-gradient-to-r from-btm-cyan to-btm-gold text-slate-950 font-bold text-xs shadow-sm hover:opacity-95 flex items-center gap-1.5 cursor-pointer ml-1"
+              className="px-5 py-2 rounded-full bg-gradient-to-r from-btm-cyan to-btm-gold text-slate-950 font-bold text-xs shadow-sm hover:opacity-95 flex items-center gap-1.5 cursor-pointer ml-1"
             >
               <span>Deploy ({selectedSquadStack.length})</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -301,15 +301,15 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
           </div>
         </div>
 
-        {/* Minimal Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 mb-10">
+        {/* Minimal Category Filter Tabs - Pill Shaped */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-xs font-mono transition-all cursor-pointer ${
                 activeCategory === cat.id
-                  ? 'bg-btm-cyan text-white font-bold shadow-md'
+                  ? 'bg-btm-cyan text-white font-bold shadow-md scale-105'
                   : 'bg-slate-50 border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100'
               }`}
             >
@@ -334,7 +334,7 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
                   {/* Top: Version & Domain */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-700">
+                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700">
                         {tech.version}
                       </span>
                       <span className="text-[10px] font-mono text-slate-400 font-medium">
@@ -360,7 +360,7 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
                     {/* Framework Pills */}
                     <div className="flex flex-wrap gap-1 mb-4">
                       {tech.frameworks.map((fw) => (
-                        <span key={fw} className="text-[9.5px] font-mono px-1.5 py-0.5 rounded bg-slate-50 border border-slate-200 text-slate-600">
+                        <span key={fw} className="text-[9.5px] font-mono px-2 py-0.5 rounded-full bg-slate-50 border border-slate-200 text-slate-600">
                           {fw}
                         </span>
                       ))}
@@ -372,7 +372,7 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
                     <button
                       type="button"
                       onClick={(e) => handleToggleSquadStack(tech.name, e)}
-                      className={`px-2.5 py-1 rounded-lg border text-[11px] font-mono transition-all cursor-pointer flex items-center gap-1 ${
+                      className={`px-3 py-1.5 rounded-full border text-[11px] font-mono transition-all cursor-pointer flex items-center gap-1 ${
                         isInSquad
                           ? 'bg-btm-cyan text-white border-btm-cyan font-bold'
                           : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
@@ -398,7 +398,7 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
           </AnimatePresence>
         </div>
 
-        {/* Minimal Custom Scoping Banner */}
+        {/* Minimal Custom Scoping Banner - Pill Button */}
         <div className="p-6 rounded-2xl bg-slate-900 text-white border border-slate-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="space-y-0.5">
             <span className="text-[10.5px] font-mono text-btm-cyan uppercase font-bold">Custom Tech Stack Scoping</span>
@@ -412,7 +412,7 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
 
           <button
             onClick={() => onOpenBooking('niche-stack')}
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-btm-cyan to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 cursor-pointer"
+            className="px-7 py-3.5 rounded-full bg-gradient-to-r from-btm-cyan to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 cursor-pointer"
           >
             <span>Request Custom Stack Pod</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -451,7 +451,7 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
 
                 <button
                   onClick={() => setSelectedTechModal(null)}
-                  className="p-2 rounded-xl hover:bg-slate-100 text-slate-400 hover:text-slate-700 cursor-pointer"
+                  className="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -476,18 +476,18 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
                     <span className="text-btm-cyan font-bold block text-[9.5px] mb-0.5">// Standard Pod Composition</span>
                     <span className="text-slate-900 font-semibold">{selectedTechModal.squadSpec}</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold shrink-0">
+                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold shrink-0">
                     &lt; 14 Days SLA
                   </span>
                 </div>
               </div>
 
-              {/* Modal Footer */}
+              {/* Modal Footer - Pill Buttons */}
               <div className="pt-3 border-t border-slate-100 flex items-center justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setSelectedTechModal(null)}
-                  className="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-mono text-xs hover:bg-slate-50 cursor-pointer"
+                  className="px-5 py-2.5 rounded-full border border-slate-200 text-slate-700 font-mono text-xs hover:bg-slate-50 cursor-pointer"
                 >
                   Close
                 </button>
@@ -498,7 +498,7 @@ export const InteractiveTechStack = ({ onOpenBooking }) => {
                     setSelectedTechModal(null);
                     onOpenBooking(`tech-${tech.name.toLowerCase()}`);
                   }}
-                  className="px-6 py-2.5 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-xs shadow-md flex items-center gap-2 cursor-pointer"
+                  className="px-7 py-2.5 rounded-full bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-xs shadow-md flex items-center gap-2 cursor-pointer"
                 >
                   <span>Deploy {selectedTechModal.name} Squad</span>
                   <ArrowRight className="w-3.5 h-3.5" />

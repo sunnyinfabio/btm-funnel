@@ -214,7 +214,7 @@ export const ExecutionPipelineDiagram = ({ onOpenBooking }) => {
 
               <button
                 onClick={() => onOpenBooking(`growth-step-${current.step}`)}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 flex items-center gap-2 shimmer-btm cursor-pointer"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 flex items-center gap-2 shimmer-btm cursor-pointer"
               >
                 <span>Accelerate Execution</span>
                 <ArrowRight className="w-4 h-4 text-slate-950" />

@@ -189,11 +189,11 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA - Pill Shaped */}
         <div className="text-center">
           <button
             onClick={() => onOpenBooking('all-cases')}
-            className="px-8 py-3.5 rounded-xl bg-[#002B49] hover:bg-[#00182A] text-white font-bold text-xs shadow-md transition-all inline-flex items-center gap-2 cursor-pointer"
+            className="px-8 py-3.5 rounded-full bg-[#002B49] hover:bg-[#00182A] text-white font-bold text-xs shadow-md transition-all inline-flex items-center gap-2 cursor-pointer"
           >
             <span>Request Full Institutional Case Archive</span>
             <ArrowRight className="w-4 h-4 text-btm-cyan" />
@@ -222,12 +222,12 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#002B49] via-[#002B49]/70 to-transparent" />
                 
                 <div className="absolute top-4 left-5 right-5 flex items-center justify-between z-10">
-                  <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-950/80 backdrop-blur-md border border-cyan-400/30 text-btm-cyan">
+                  <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-cyan-400/30 text-btm-cyan">
                     {selectedCaseModal.clientTier}
                   </span>
                   <button
                     onClick={() => setSelectedCaseModal(null)}
-                    className="p-1.5 rounded-lg bg-black/40 hover:bg-black/70 text-white cursor-pointer"
+                    className="p-1.5 rounded-full bg-black/40 hover:bg-black/70 text-white cursor-pointer"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -291,12 +291,12 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              {/* Modal Footer */}
+              {/* Modal Footer - Pill Buttons */}
               <div className="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-3 shrink-0">
                 <button
                   type="button"
                   onClick={() => setSelectedCaseModal(null)}
-                  className="px-4 py-2 rounded-xl border border-slate-200 text-slate-700 font-mono text-xs hover:bg-white cursor-pointer"
+                  className="px-5 py-2 rounded-full border border-slate-200 text-slate-700 font-mono text-xs hover:bg-white cursor-pointer"
                 >
                   Close
                 </button>
@@ -307,7 +307,7 @@ export const InteractiveIndustries = ({ onOpenBooking }) => {
                     setSelectedCaseModal(null);
                     onOpenBooking(`case-${cs.id}`);
                   }}
-                  className="px-6 py-2 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-xs shadow-md flex items-center gap-2 cursor-pointer"
+                  className="px-7 py-2.5 rounded-full bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-xs shadow-md flex items-center gap-2 cursor-pointer"
                 >
                   <span>Build Squad for {selectedCaseModal.name}</span>
                   <ArrowRight className="w-3.5 h-3.5" />

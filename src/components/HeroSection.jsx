@@ -130,17 +130,17 @@ export const HeroSection = ({ onOpenBooking }) => {
           </motion.p>
         </div>
 
-        {/* Action Hub */}
+        {/* Action Hub - Pill Shaped Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
-          {/* Live Website Red CTA Button */}
+          {/* Live Website Red CTA Button (Pill) */}
           <button
             onClick={() => onOpenBooking('how-can-we-help')}
-            className="w-full sm:w-auto px-9 py-4 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-base shadow-2xl hover:shadow-red-500/40 hover:scale-[1.03] active:scale-[0.98] transition-all flex items-center justify-center gap-3 cursor-pointer"
+            className="w-full sm:w-auto px-9 py-4 rounded-full bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-base shadow-2xl hover:shadow-red-500/40 hover:scale-[1.03] active:scale-[0.98] transition-all flex items-center justify-center gap-3 cursor-pointer"
           >
             <span>How Can We Help You?</span>
             <ArrowRight className="w-5 h-5" />
@@ -148,7 +148,7 @@ export const HeroSection = ({ onOpenBooking }) => {
 
           <a
             href="#capacity-calculator"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/80 backdrop-blur-md text-white font-semibold text-base border border-slate-700 hover:border-btm-cyan hover:bg-slate-800 transition-all flex items-center justify-center gap-2 group shadow-xl hover:scale-[1.02]"
+            className="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-900/80 backdrop-blur-md text-white font-semibold text-base border border-slate-700 hover:border-btm-cyan hover:bg-slate-800 transition-all flex items-center justify-center gap-2 group shadow-xl hover:scale-[1.02]"
           >
             <span>Calculate Capacity & ROI</span>
             <TrendingUp className="w-4 h-4 text-btm-cyan group-hover:translate-x-1 transition-transform" />

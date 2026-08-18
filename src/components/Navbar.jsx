@@ -147,11 +147,11 @@ export const Navbar = ({ onOpenBooking }) => {
             </a>
           </nav>
 
-          {/* Right Hub: Clean Red "Get In Touch" Button */}
+          {/* Right Hub: Clean Red "Get In Touch" Button (Pill Shaped) */}
           <div className="hidden lg:flex items-center">
             <button
               onClick={() => onOpenBooking('navbar-get-in-touch')}
-              className="px-8 py-3 rounded-xl bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-sm shadow-md hover:shadow-red-500/25 transition-all flex items-center gap-2 cursor-pointer shrink-0"
+              className="px-8 py-3 rounded-full bg-[#E62E2E] hover:bg-[#D32F2F] text-white font-bold text-sm shadow-md hover:shadow-red-500/25 transition-all flex items-center gap-2 cursor-pointer shrink-0"
             >
               <span>Get In Touch</span>
               <ArrowRight className="w-4 h-4" />
@@ -162,7 +162,7 @@ export const Navbar = ({ onOpenBooking }) => {
           <div className="flex lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 cursor-pointer"
+              className="p-2 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 cursor-pointer"
               aria-label="Open Mobile Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -197,7 +197,7 @@ export const Navbar = ({ onOpenBooking }) => {
                 setMobileMenuOpen(false);
                 onOpenBooking('capacity-review');
               }}
-              className="w-full py-3.5 rounded-xl bg-[#E62E2E] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-3.5 rounded-full bg-[#E62E2E] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Get In Touch / Free Consultation</span>
               <ArrowRight className="w-4 h-4" />

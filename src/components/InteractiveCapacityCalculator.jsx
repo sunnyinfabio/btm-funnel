@@ -253,10 +253,10 @@ export const InteractiveCapacityCalculator = ({ onOpenBooking }) => {
               </div>
             </div>
 
-            {/* Action Trigger */}
+            {/* Action Trigger - Pill Button */}
             <button
               onClick={handleCelebrate}
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 shimmer-btm cursor-pointer"
+              className="w-full py-4 rounded-full bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 shimmer-btm cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-white" />
               <span>Lock In This Squad Allocation</span>

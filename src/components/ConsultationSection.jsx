@@ -272,7 +272,7 @@ export const ConsultationSection = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 rounded-xl bg-gradient-to-r from-btm-cyan via-btm-electric to-btm-gold text-slate-950 font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 shimmer-btm"
+                      className="w-full py-4 rounded-full bg-gradient-to-r from-btm-cyan via-btm-electric to-btm-gold text-slate-950 font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 shimmer-btm cursor-pointer"
                     >
                       {isSubmitting ? (
                         <span>Processing Quote Request...</span>
