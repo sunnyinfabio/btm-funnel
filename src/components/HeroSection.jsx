@@ -56,11 +56,11 @@ export const HeroSection = ({ onOpenBooking }) => {
         <img
           src="/btm-hero-chess.jpg"
           alt="BTM Outsourcing Strategy Chess"
-          className="w-full h-full object-cover object-center scale-105 animate-float-slow"
+          className="w-full h-full object-cover object-center scale-105"
         />
-        {/* Dark Enterprise Gradient Overlay for Maximum Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00182A]/95 via-[#002B49]/90 to-[#0A192F]/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F8FAFC] via-transparent to-black/40" />
+        {/* Dark Enterprise Gradient Overlay for Sharp Maximum Contrast & Readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001424]/95 via-[#00223A]/90 to-[#0A192F]/85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#00182A] via-transparent to-black/60" />
       </div>
 
       {/* Floating 3D Engineering Telemetry Badges */}
@@ -100,31 +100,31 @@ export const HeroSection = ({ onOpenBooking }) => {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-btm-cyan/40 text-xs font-mono text-slate-200 shadow-xl hover:border-btm-cyan transition-colors">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-btm-cyan/50 text-xs font-mono text-slate-200 shadow-2xl hover:border-btm-cyan transition-colors">
             <span className="w-2 h-2 rounded-full bg-btm-cyan animate-pulse" />
-            <span className="text-btm-cyan font-bold tracking-wider uppercase">EXPERIENCE THE NEW GAME</span>
+            <span className="text-btm-cyan font-black tracking-wider uppercase">EXPERIENCE THE NEW GAME</span>
             <span className="text-slate-500">|</span>
-            <span className="font-semibold text-white">Your Roadmap. Our Execution Capacity.</span>
+            <span className="font-bold text-white">Your Roadmap. Our Execution Capacity.</span>
           </div>
         </motion.div>
 
-        {/* Master Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-10">
+        {/* Master Bold Headline */}
+        <div className="text-center max-w-5xl mx-auto mb-10">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display font-black text-4xl sm:text-6xl md:text-7xl tracking-tight text-white leading-[1.08] mb-6 drop-shadow-md"
+            className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[76px] tracking-tight text-white leading-[1.08] mb-6 drop-shadow-2xl"
           >
-            Experience The <span className="text-gradient-cyan">New Game</span> in <br className="hidden sm:inline" />
-            <span className="text-gradient-gold">Software Execution.</span>
+            Experience The <span className="text-btm-cyan text-gradient-cyan font-black">New Game</span> in <br className="hidden sm:inline" />
+            <span className="text-white font-black drop-shadow-lg">Software Execution.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-slate-200 font-normal leading-relaxed max-w-3xl mx-auto drop-shadow-sm"
+            className="text-base sm:text-xl text-slate-200 font-normal leading-relaxed max-w-3xl mx-auto drop-shadow-md"
           >
             BTM Outsourcing is your strategic technology partner. We close the gap between ambition and execution, providing companies with <strong className="text-white font-bold">dedicated engineering capacity, pre-vetted senior squads, and scalable product delivery</strong>.
           </motion.p>
@@ -191,63 +191,60 @@ export const HeroSection = ({ onOpenBooking }) => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeAttentionTab}
-                initial={{ opacity: 0, x: 15 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -15 }}
-                transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+                className="space-y-4"
               >
-                <div className="md:col-span-8 space-y-3">
-                  <span className="text-xs font-mono uppercase tracking-wider text-btm-gold font-bold">
-                    {attentionHooks[activeAttentionTab].badge}
-                  </span>
-                  <h2 className="font-display font-bold text-2xl sm:text-3xl text-white leading-snug">
-                    "{attentionHooks[activeAttentionTab].headline}"
-                  </h2>
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    {attentionHooks[activeAttentionTab].subtext}
-                  </p>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-btm-cyan text-xs font-mono">
+                  {React.createElement(attentionHooks[activeAttentionTab].icon, { className: "w-3.5 h-3.5" })}
+                  <span>{attentionHooks[activeAttentionTab].badge}</span>
                 </div>
 
-                <div className="md:col-span-4 p-5 rounded-2xl bg-slate-950/90 border border-slate-800 text-center space-y-2 shadow-inner">
-                  <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold">BTM Capacity Impact</span>
-                  <div className="text-2xl font-display font-black text-white">
-                    {attentionHooks[activeAttentionTab].metric}
+                <h3 className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight">
+                  "{attentionHooks[activeAttentionTab].headline}"
+                </h3>
+
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                    {attentionHooks[activeAttentionTab].subtext}
+                  </p>
+
+                  <div className="shrink-0 p-3 rounded-2xl bg-slate-950/80 border border-slate-800 text-center font-mono">
+                    <span className="text-[10px] text-slate-400 block uppercase">Capacity Gain</span>
+                    <span className="text-base font-bold text-emerald-400">{attentionHooks[activeAttentionTab].metric}</span>
                   </div>
-                  <button
-                    onClick={() => onOpenBooking('attention-card')}
-                    className="w-full py-2 rounded-lg bg-btm-cyan/10 border border-btm-cyan/40 text-xs font-mono text-btm-cyan hover:bg-btm-cyan hover:text-slate-950 transition-colors font-bold mt-2 shadow-sm cursor-pointer"
-                  >
-                    Solve This Constraint ↗
-                  </button>
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
         </motion.div>
 
-        {/* 4 Core Quantitative Pillars Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-5xl mx-auto">
-          {[
-            { label: 'Speed', value: '< 14 Days', desc: 'Active in Sprints', color: 'text-btm-cyan' },
-            { label: 'Capability', value: '100% Senior', desc: 'Pre-Vetted Specialists', color: 'text-amber-400' },
-            { label: 'Scalability', value: 'Elastic Pods', desc: 'Scale with Priorities', color: 'text-emerald-400' },
-            { label: 'Execution', value: '99.4% Green', desc: 'Zero Regressions', color: 'text-purple-400' },
-          ].map((pillar, idx) => (
-            <motion.div 
-              key={pillar.label}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="rounded-2xl p-4 border border-white/10 text-center bg-slate-950/80 backdrop-blur-md shadow-xl hover:scale-105 transition-transform"
-            >
-              <div className="text-xs font-mono uppercase text-btm-cyan font-bold">{pillar.label}</div>
-              <div className={`text-2xl font-display font-black mt-0.5 ${pillar.color}`}>{pillar.value}</div>
-              <div className="text-[11px] text-slate-300 font-mono mt-0.5">{pillar.desc}</div>
-            </motion.div>
-          ))}
-        </div>
+        {/* 4 Quantitative Pillars */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-5xl mx-auto"
+        >
+          <div className="p-5 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/10 text-center">
+            <div className="text-2xl sm:text-3xl font-display font-black text-btm-cyan mb-0.5">&lt; 14 Days</div>
+            <div className="text-xs text-slate-300 font-semibold">Squad Deployment SLA</div>
+          </div>
+          <div className="p-5 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/10 text-center">
+            <div className="text-2xl sm:text-3xl font-display font-black text-btm-gold mb-0.5">100% Senior</div>
+            <div className="text-xs text-slate-300 font-semibold">Pre-Vetted Engineers</div>
+          </div>
+          <div className="p-5 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/10 text-center">
+            <div className="text-2xl sm:text-3xl font-display font-black text-emerald-400 mb-0.5">Elastic Pods</div>
+            <div className="text-xs text-slate-300 font-semibold">Scale Up or Down</div>
+          </div>
+          <div className="p-5 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/10 text-center">
+            <div className="text-2xl sm:text-3xl font-display font-black text-white mb-0.5">99.4% Green</div>
+            <div className="text-xs text-slate-300 font-semibold">Automated QA Pass</div>
+          </div>
+        </motion.div>
 
       </div>
     </section>
