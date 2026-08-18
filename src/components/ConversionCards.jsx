@@ -160,13 +160,13 @@ export const ConversionCards = ({ onSelectPathway }) => {
                   </div>
                 </div>
 
-                {/* Card CTA Action */}
+                {/* Card CTA Action - Pill Button */}
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     onSelectPathway(pathway.slug);
                   }}
-                  className={`w-full py-3.5 px-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 group ${
+                  className={`w-full py-4 px-6 rounded-full font-bold text-sm transition-all flex items-center justify-center gap-2 group cursor-pointer ${
                     pathway.highlight
                       ? 'bg-gradient-to-r from-brand-cyan to-brand-emerald text-slate-950 shadow-glow-cyan hover:opacity-95 shimmer-button'
                       : 'bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-brand-cyan/50'

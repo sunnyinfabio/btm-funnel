@@ -127,7 +127,7 @@ export const FAQSection = ({ onOpenBooking }) => {
           </p>
           <button
             onClick={() => onOpenBooking('faq-cta')}
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-btm-cyan to-btm-gold text-white font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all inline-flex items-center gap-2"
+            className="px-8 py-3.5 rounded-full bg-gradient-to-r from-btm-cyan to-btm-gold text-white font-bold text-sm shadow-btm-glow hover:opacity-95 transition-all inline-flex items-center gap-2 cursor-pointer"
           >
             <Sparkles className="w-4 h-4 text-white" />
             <span>Schedule Technical Review</span>

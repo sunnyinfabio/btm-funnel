@@ -146,7 +146,7 @@ export const ConversionHub = ({ onOpenBookingWithData }) => {
                 e.stopPropagation();
                 handleTrigger('capacity-review', reviewData);
               }}
-              className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-btm-navy text-white font-bold text-xs transition-colors flex items-center justify-center gap-2 group shadow-sm"
+              className="w-full py-4 rounded-full bg-slate-900 hover:bg-btm-navy text-white font-bold text-xs transition-colors flex items-center justify-center gap-2 group shadow-sm cursor-pointer"
             >
               <span>Request a Capacity Review</span>
               <ArrowRight className="w-4 h-4 text-btm-cyan group-hover:translate-x-1 transition-transform" />
@@ -222,7 +222,7 @@ export const ConversionHub = ({ onOpenBookingWithData }) => {
                 e.stopPropagation();
                 handleTrigger('blueprint-architecture', blueprintData);
               }}
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-xs shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 shimmer-btm"
+              className="w-full py-4 rounded-full bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-xs shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 shimmer-btm cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-white" />
               <span>Build Your Team Blueprint</span>
@@ -295,7 +295,7 @@ export const ConversionHub = ({ onOpenBookingWithData }) => {
                 e.stopPropagation();
                 handleTrigger('audit-optimization', modernData);
               }}
-              className="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-btm-navy text-white font-bold text-xs transition-colors flex items-center justify-center gap-2 group shadow-sm"
+              className="w-full py-4 rounded-full bg-slate-900 hover:bg-btm-navy text-white font-bold text-xs transition-colors flex items-center justify-center gap-2 group shadow-sm cursor-pointer"
             >
               <span>Request an Assessment</span>
               <ArrowRight className="w-4 h-4 text-purple-400 group-hover:translate-x-1 transition-transform" />

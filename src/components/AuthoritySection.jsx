@@ -83,7 +83,7 @@ export const AuthoritySection = ({ onOpenBooking }) => {
 
             <button
               onClick={() => onOpenBooking('capacity-review')}
-              className="w-full py-3 rounded-xl bg-slate-100 hover:bg-btm-navy hover:text-white text-slate-800 border border-slate-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all"
+              className="w-full py-3.5 rounded-full bg-slate-100 hover:bg-btm-navy hover:text-white text-slate-800 border border-slate-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
             >
               <span>Calculate Zero-Overhead Capacity</span>
               <ArrowRight className="w-3.5 h-3.5 text-btm-cyan" />
@@ -119,7 +119,7 @@ export const AuthoritySection = ({ onOpenBooking }) => {
 
             <button
               onClick={() => onOpenBooking('audit-optimization')}
-              className="w-full py-3 rounded-xl bg-slate-100 hover:bg-btm-navy hover:text-white text-slate-800 border border-slate-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all"
+              className="w-full py-3.5 rounded-full bg-slate-100 hover:bg-btm-navy hover:text-white text-slate-800 border border-slate-200 text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer"
             >
               <span>Assess Technical Debt Modernisation</span>
               <ArrowRight className="w-3.5 h-3.5 text-btm-gold" />
