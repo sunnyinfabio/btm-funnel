@@ -25,7 +25,8 @@ import {
   Database,
   Layers,
   Award,
-  AlertCircle
+  AlertCircle,
+  Users
 } from 'lucide-react';
 
 export const InteractiveIndustries = ({ onOpenBooking }) => {
