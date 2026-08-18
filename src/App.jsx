@@ -3,17 +3,13 @@ import { BackgroundCanvas } from './components/BackgroundCanvas';
 import { CursorSpotlight } from './components/CursorSpotlight';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
-import { HiringLagSection } from './components/HiringLagSection';
-import { InteractiveCapacityCalculator } from './components/InteractiveCapacityCalculator';
-import { SolutionsSection } from './components/SolutionsSection';
-import { InteractiveWhyBTM } from './components/InteractiveWhyBTM';
-import { DifferentiationBento } from './components/DifferentiationBento';
-import { InteractiveIndustries } from './components/InteractiveIndustries';
+import { ExecutionPipelineDiagram } from './components/ExecutionPipelineDiagram';
 import { InteractiveTechStack } from './components/InteractiveTechStack';
-import { DevelopmentProcess } from './components/DevelopmentProcess';
-import { TrustSection } from './components/TrustSection';
-import { ABMSegmentRouting } from './components/ABMSegmentRouting';
 import { ThoughtLeadership } from './components/ThoughtLeadership';
+import { InteractiveIndustries } from './components/InteractiveIndustries';
+import { TrustSection } from './components/TrustSection';
+import { DevelopmentProcess } from './components/DevelopmentProcess';
+import { InteractiveCapacityCalculator } from './components/InteractiveCapacityCalculator';
 import { ConsultationSection } from './components/ConsultationSection';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
@@ -51,50 +47,38 @@ export function App() {
 
       {/* Main Page Layout */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        {/* Navigation Bar */}
+        {/* Top Navigation */}
         <Navbar onOpenBooking={handleOpenBooking} />
 
         <main className="flex-1">
-          {/* Stage 01 — Attention Hero */}
+          {/* 1. Selector / Hero */}
           <HeroSection onOpenBooking={handleOpenBooking} />
 
-          {/* Hiring Lag & Opportunity Cost Problem Stacking */}
-          <HiringLagSection onOpenBooking={handleOpenBooking} />
+          {/* 2. Visual Diagram: Roadmap → Capacity Gap → BTM Integration → Execution */}
+          <ExecutionPipelineDiagram onOpenBooking={handleOpenBooking} />
 
-          {/* Interactive Live Capacity & ROI Calculator */}
-          <InteractiveCapacityCalculator onOpenBooking={handleOpenBooking} />
-
-          {/* Stage 02 — Relevance: 4 Core Execution Models */}
-          <SolutionsSection onOpenBooking={handleOpenBooking} />
-
-          {/* Interactive 3D Packet Dossiers ("Why BTM Outsourcing?") */}
-          <InteractiveWhyBTM onOpenBooking={handleOpenBooking} />
-
-          {/* Stage 04 — Differentiation: 4 Core Pillars */}
-          <DifferentiationBento onOpenBooking={handleOpenBooking} />
-
-          {/* Key Focus Industries Explorer (Topologies & Blueprints) */}
-          <InteractiveIndustries onOpenBooking={handleOpenBooking} />
-
-          {/* Cross-Functional Technology Stack with Modern Frames & Live Squad Builder */}
+          {/* 3. Technology Ecosystem with Frame Inspectors & Live Squad Builder */}
           <InteractiveTechStack onOpenBooking={handleOpenBooking} />
 
-          {/* Step-by-Step Agile Development Process with Official BTM Diagram */}
-          <DevelopmentProcess onOpenBooking={handleOpenBooking} />
-
-          {/* Stage 05 — Trust & 2-Week Risk-Free Trial Sprint */}
-          <TrustSection onOpenBooking={handleOpenBooking} />
-
-          {/* Stage 07 — ABM & Audience Growth-Stage Routing */}
-          <ABMSegmentRouting onOpenBooking={handleOpenBooking} />
-
-          {/* Thought Leadership Layer (Philosophy by Anupam Oberai) */}
+          {/* 4. Editorial Section: Executive Philosophy by Anupam Oberai */}
           <ThoughtLeadership onOpenBooking={handleOpenBooking} />
 
-          {/* Authentic Consultation & Quote Request with Corporate Background */}
+          {/* 5. Featured Cases: Challenge → BTM Role → What BTM Owned → Outcome */}
+          <InteractiveIndustries onOpenBooking={handleOpenBooking} />
+
+          {/* 6. Evidence Wall: Certifications, Locations, Numbers, & Trial Guarantee */}
+          <TrustSection onOpenBooking={handleOpenBooking} />
+
+          {/* 7. Timeline: Agile Development Process with Official BTM Diagram */}
+          <DevelopmentProcess onOpenBooking={handleOpenBooking} />
+
+          {/* 8. Interactive Capacity & ROI Estimator */}
+          <InteractiveCapacityCalculator onOpenBooking={handleOpenBooking} />
+
+          {/* 9. Authentic Quote & Consultation Hub */}
           <ConsultationSection />
 
-          {/* FAQ Section */}
+          {/* 10. Frequently Asked Questions */}
           <FAQSection onOpenBooking={handleOpenBooking} />
         </main>
 

@@ -1,107 +1,147 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Lock, Users, GitMerge, Award, CheckCircle2, SlidersHorizontal, ArrowRight } from 'lucide-react';
+import { 
+  ShieldCheck, 
+  Lock, 
+  Users, 
+  Award, 
+  CheckCircle2, 
+  ArrowRight,
+  Building2,
+  Globe2,
+  FileCheck2,
+  Clock,
+  Sparkles,
+  Quote
+} from 'lucide-react';
 
 export const TrustSection = ({ onOpenBooking }) => {
-  const trustPillars = [
+  const certifications = [
+    { title: 'SOC 2 Type II', subtitle: 'Security & Availability Certified', org: 'AICPA Standard', icon: ShieldCheck },
+    { title: 'ISO 27001', subtitle: 'Information Security Management', org: 'Global Standard', icon: Lock },
+    { title: 'HIPAA & HITECH', subtitle: 'Healthcare Data Privacy BAA', org: 'US Federal Standard', icon: FileCheck2 },
+    { title: 'PCI-DSS Level 1', subtitle: 'Payment Gateway Compliance', org: 'Financial Security', icon: Award },
+  ];
+
+  const evidenceMetrics = [
+    { value: '140+', label: 'Active Sprints Delivered', sub: 'Across US & Global Clients' },
+    { value: '< 4%', label: 'Engineer Attrition Rate', sub: 'Industry Low (Avg is 22%)' },
+    { value: '< 14 Days', label: 'Squad Deployment SLA', sub: 'From Diagnostic to Day 1 PR' },
+    { value: '99.4%', label: 'Automated QA Pass Rate', sub: 'Zero Critical Regressions' },
+  ];
+
+  const deliveryLocations = [
     {
-      title: 'Integrated as One Team',
-      headline: 'An outsourced engineer should feel like part of your team. Not another vendor.',
-      body: 'Integrated communication. Shared priorities. Clear sprint accountability. Our engineers participate in your daily standups, review PRs in your GitHub/GitLab, and communicate in your Slack channels.',
-      icon: Users,
-      badge: 'Zero Vendor Friction',
+      country: '🇺🇸 United States',
+      hub: 'New Jersey / New York Hub',
+      role: 'Client Architecture & Leadership Alignment',
+      overlap: 'Direct EST / PST Timezone Sync',
+      phone: '+1 (862) 437-1138',
     },
     {
-      title: 'Retain Full Strategic Control',
-      headline: 'Scale the team without surrendering control.',
-      body: 'You retain complete product direction, backlog prioritization, and architectural governance. BTM adds the senior engineering capability required to execute it on schedule.',
-      icon: GitMerge,
-      badge: 'You Own Direction',
-    },
-    {
-      title: 'True Elastic Flexibility',
-      headline: 'Flexibility isn’t simply adding people. It is changing capacity as priorities change.',
-      body: 'Scale squads up before critical product launches and scale back when transitioning to maintenance, with transparent 30-day capacity adjustments and zero hiring/firing friction.',
-      icon: SlidersHorizontal,
-      badge: 'Elastic Scale',
+      country: '🇮🇳 India Delivery Center',
+      hub: 'Gurugram, Cyber City Tech Hub',
+      role: 'Core Engineering Pods & 24/7 Delivery',
+      overlap: '4-7 Hours Real-Time Standup Overlap',
+      phone: '+91 124 410 4312',
     },
   ];
 
   return (
-    <section id="trust" className="py-24 relative overflow-hidden bg-white">
+    <section id="trust" className="py-24 relative overflow-hidden bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-emerald-700 text-xs font-mono mb-4">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span className="font-semibold text-slate-800">STAGE 05 — TRUST & RISK REVERSAL</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-[#002B49] text-xs font-mono mb-4 shadow-sm">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <span className="font-semibold text-slate-800">EVIDENCE-HEAVY GOVERNANCE & CREDENTIALS</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl text-[#002B49] tracking-tight mb-4">
-            Removing the Friction from <span className="text-gradient-cyan">Global Engineering</span>
+            Reasons to <span className="text-gradient-cyan">Trust BTM Execution</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            How BTM eliminates the traditional risks, communication gaps, and control fears associated with legacy outsourcing.
+            Institutional credentials, verified security compliance, low attrition, and Wall Street engineering leadership.
           </p>
         </div>
 
-        {/* 3 Core Trust Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          {trustPillars.map((item, idx) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="glass-card-btm rounded-3xl p-7 border border-slate-200 flex flex-col justify-between hover:border-btm-cyan hover:shadow-xl transition-all group bg-white"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="p-3 rounded-2xl bg-cyan-50 border border-cyan-200 text-btm-cyan group-hover:scale-110 transition-transform">
-                    <item.icon className="w-6 h-6" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">
-                    {item.badge}
-                  </span>
-                </div>
-
-                <h3 className="font-display font-bold text-xl text-[#002B49] mb-3 leading-snug">
-                  "{item.headline}"
-                </h3>
-
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-                  {item.body}
-                </p>
+        {/* 4 Quantitative Evidence Numbers */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          {evidenceMetrics.map((item, idx) => (
+            <div key={item.label} className="p-6 rounded-3xl bg-slate-50 border border-slate-200 text-center">
+              <div className="text-3xl sm:text-4xl font-display font-black text-[#002B49] mb-1">
+                {item.value}
               </div>
-
-              <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-mono text-emerald-600 font-semibold">
-                <CheckCircle2 className="w-4 h-4 shrink-0" />
-                <span>Active in 140+ Client Sprints</span>
+              <div className="text-xs font-bold text-slate-900 mb-0.5">
+                {item.label}
               </div>
-            </motion.div>
+              <div className="text-[10px] font-mono text-slate-500">
+                {item.sub}
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Institutional Safeguards Banner */}
-        <div className="glass-card-btm rounded-3xl p-6 sm:p-8 border border-slate-200 bg-[#F1F5F9] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-          <div className="flex items-center gap-4">
-            <div className="p-3.5 rounded-2xl bg-white border border-slate-200 text-btm-cyan shrink-0 shadow-sm">
-              <Award className="w-8 h-8" />
+        {/* 4 Compliance Certifications Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          {certifications.map((cert) => (
+            <div key={cert.title} className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-3">
+              <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 shrink-0">
+                <cert.icon className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-slate-900">{cert.title}</div>
+                <div className="text-[11px] text-slate-600 leading-tight mt-0.5">{cert.subtitle}</div>
+                <span className="text-[9.5px] font-mono text-emerald-600 font-bold block mt-1">{cert.org}</span>
+              </div>
             </div>
-            <div>
-              <h4 className="font-display font-bold text-lg text-[#002B49] mb-1">
-                The BTM 2-Week Risk-Free Trial Sprint
-              </h4>
-              <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
-                Experience our squad in your active sprint backlog for 14 days. If code velocity and architecture standards do not exceed expectations, you owe nothing.
-              </p>
+          ))}
+        </div>
+
+        {/* Delivery Locations & Real-Time Sync Hub */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+          {deliveryLocations.map((loc) => (
+            <div key={loc.country} className="p-7 rounded-3xl bg-[#002B49] text-white border border-slate-800 shadow-xl flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="font-display font-bold text-lg text-white">
+                    {loc.country}
+                  </span>
+                  <span className="text-[10.5px] font-mono px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-btm-cyan">
+                    {loc.overlap}
+                  </span>
+                </div>
+
+                <div className="text-sm font-bold text-btm-cyan mb-1">{loc.hub}</div>
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">{loc.role}</p>
+              </div>
+
+              <div className="pt-3 border-t border-slate-700 flex items-center justify-between text-xs font-mono text-slate-300">
+                <span>Direct Hotline:</span>
+                <span className="text-white font-bold">{loc.phone}</span>
+              </div>
             </div>
+          ))}
+        </div>
+
+        {/* The 2-Week Risk-Free Trial Sprint SLA Reversal Banner */}
+        <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-r from-[#002B49] via-slate-900 to-[#002B49] text-white border border-btm-cyan/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-xs font-mono text-btm-gold">
+              <Sparkles className="w-4 h-4" />
+              <span>THE ULTIMATE RISK REVERSAL GUARANTEE</span>
+            </div>
+            <h4 className="font-display font-bold text-2xl text-white">
+              The BTM 2-Week Risk-Free Trial Sprint
+            </h4>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+              Experience your dedicated squad inside your active Jira sprint backlog for 14 calendar days. If code velocity, communication cadence, and architecture standards do not meet expectations, you owe nothing.
+            </p>
           </div>
 
           <button
             onClick={() => onOpenBooking('risk-free-trial')}
-            className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-white font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 shimmer-btm"
+            className="px-8 py-4 rounded-xl bg-gradient-to-r from-btm-cyan to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 shrink-0 flex items-center gap-2 shimmer-btm cursor-pointer"
           >
             <span>Claim 14-Day Trial Sprint</span>
             <ArrowRight className="w-4 h-4" />
