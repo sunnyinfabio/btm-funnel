@@ -103,7 +103,7 @@ export const Footer = ({ onOpenBooking }) => {
             </p>
             <button
               onClick={() => onOpenBooking('footer-review')}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-full bg-gradient-to-r from-btm-cyan via-[#00B4D8] to-btm-gold text-slate-950 font-bold text-xs shadow-btm-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Book Capacity Review</span>
               <ArrowRight className="w-4 h-4" />
@@ -112,15 +112,48 @@ export const Footer = ({ onOpenBooking }) => {
 
         </div>
 
-        {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <div>
-            &copy; {new Date().getFullYear()} BTM Outsourcing. All Rights Reserved. Clean-Room IP Assignment.
+        {/* Bottom copyright and Official Site Credits */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <span>&copy; {new Date().getFullYear()} BTM Outsourcing. All Rights Reserved. Clean-Room IP Assignment.</span>
+            <div className="flex gap-4 font-mono text-[11px]">
+              <a href="https://btmoutsourcing.com/privacy-policy.php" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+              <a href="https://btmoutsourcing.com/see-open-positions.php" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">Careers</a>
+              <a href="https://btmoutsourcing.com/contact-us.php" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">Contact Us</a>
+            </div>
           </div>
-          <div className="flex gap-6 font-mono text-[11px]">
-            <a href="https://btmoutsourcing.com/privacy-policy.php" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300">Privacy Policy</a>
-            <a href="https://btmoutsourcing.com/see-open-positions.php" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300">Careers</a>
-            <a href="https://btmoutsourcing.com/contact-us.php" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300">Contact Us</a>
+
+          {/* Right Bottom Official Site Credits */}
+          <div className="flex items-center gap-3 shrink-0">
+            <div className="poweredBy">
+              <a
+                href="https://play.fabulousmedia.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="FabulousMedia"
+                className="creditLogo"
+              >
+                <img
+                  src="https://play.fabulousmedia.in/sitecredit/images/fabulousmedia.svg"
+                  alt="FabulousMedia"
+                />
+              </a>
+
+              <div className="divider" />
+
+              <a
+                href="https://gocommercially.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GoCommercially"
+                className="creditLogo"
+              >
+                <img
+                  src="https://play.fabulousmedia.in/sitecredit/images/gocommercially.svg"
+                  alt="GoCommercially"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
